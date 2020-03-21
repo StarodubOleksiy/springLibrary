@@ -7,7 +7,7 @@
   [class*='col-']:last-of-type {
     padding-right: 0;
   }
-  
+
   *, *:after, *:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -58,11 +58,11 @@
       min-width: 60px;
     }
   }
-  
+
   mat-grid-tile {
     background: rgb(239, 242, 243);
   }
-  
+
   .selected {
     background-color: #CFD8DC !important;
     color: white;
@@ -110,33 +110,47 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-  
-  
+
+
   .book {
     border: 1px solid #000000;
   }
-  
+
   a {
     text-decoration: none;
     text-align: left;
   }
-  
+
   .input-width {
   width: 50%;
   }
-  
+
   .findbutton-width {
   width: 13%;
   }
-  
+
   .createriabutton-width {
-  width: 19;
+  width: 19%;
   }
-  
+
   .select-width {
   width: 16%;
   }
-  
-  
-  
-  
+
+  .card {
+    width: 90%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+example-form {
+  margin-top: 150px;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+

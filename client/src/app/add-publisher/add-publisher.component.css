@@ -1,3 +1,9 @@
+.card {
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 example-form {
     min-width: 150px;
     max-width: 500px;
