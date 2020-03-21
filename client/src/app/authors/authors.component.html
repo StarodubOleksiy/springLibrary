@@ -1,0 +1,128 @@
+<div class="container-fluid">
+    <h2>Autors</h2>
+    
+    <form class="example-form table-bordered" [formGroup]="searchForm" (ngSubmit)="findAuthorsByName()">
+                
+       
+        <mat-form-field class="input-width">
+            <div class="input-group input-group-lg">
+           
+          <input matInput [(ngModel)]="nameOfAuthor"
+          placeholder="Введіть автора"
+          type="text"
+          formControlName="search"
+          required>
+         </div>
+            </mat-form-field>
+        
+          <span class="input-group-btn">
+      <button class="findbutton-width btn btn-default btn btn-outline-success my-2 my-sm-0" mat-raised-button type="submit"
+      color="accent"  [disabled]="!nameOfAuthor" >
+       Знайти!
+       
+     </button>
+    </span>
+    
+    
+      
+    </form>
+    
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('А')">А</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Б')">Б</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('В')">В</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Г')">Г</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Д')">Д</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Е')">Е</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ё')">Ё</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Є')">Є</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ж')">Ж</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('З')">З</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('И')">И</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('І')">І</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ї')">Ї</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Й')">Й</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('К')">К</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Л')">Л</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('М')">М</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Н')">Н</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('О')">О</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('П')">П</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Р')">Р</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('С')">C</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Т')">Т</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('У')">У</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ф')">Ф</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Х')">Х</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ц')">Ц</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ч')">Ч</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ш')">Ш</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Щ')">Щ</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ю')">Ю</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Я')">Я</button>
+    </div>
+    <br>
+    <div class="btn-toolbar" role="group" aria-label="First group">
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('A')">A</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('B')">B</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('C')">C</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('D')">D</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('E')">E</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('F')">F</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('G')">G</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('H')">H</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('I')">I</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('J')">J</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('K')">K</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('L')">L</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('M')">M</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('N')">N</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('O')">O</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('P')">P</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('Q')">Q</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('R')">R</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('S')">S</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('T')">T</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('U')">U</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('V')">V</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('W')">W</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('X')">X</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('Y')">Y</button>
+        <button type="button" class="btn btn-secondary"(click)="findByCharacter('Z')">Z</button>
+      </div>
+     
+      <div class="alert alert-dark" role="alert"><p>По вашому запиту знайдено <strong>{{authors.length}}</strong> авторів</p></div>
+    
+      <table class="table table-hover">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">Прізвище імя і побатькові автора або ініціали</th>
+            <th scope="col">Редагувати автора</th>
+            <th scope="col">Видалити автора</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let author of returnedAuthors" class="text-center">
+              <th scope="row">
+      <a routerLink="/books/author/{{author.id}}">{{author.name}}</a>
+      </th>
+      <th scope="row">
+      <button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
+        Редагувати автора
+      </button> 
+    </th>
+      <th scope="row">
+     
+    <button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
+        Видалити автора
+      </button> 
+    </th>
+    </tr>
+    </tbody>
+    </table>
+
+    <div class="m-2 p-2 mx-auto">
+      <pagination [totalItems]="authors.length" (pageChanged)="pageChanged($event)"></pagination>
+    </div>
+
+    </div>

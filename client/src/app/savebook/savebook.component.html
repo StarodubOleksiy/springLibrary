@@ -1,0 +1,157 @@
+<div class="container-fluid">
+    <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+            <mat-card-header>
+            <div *ngIf="configureType.text === 'edit'">
+                <legend>Edit book</legend>
+            </div>
+            <div *ngIf="configureType.text === 'add'">
+                <legend>Add new book</legend>
+            </div>
+        </mat-card-header>
+            <mat-card-content>
+    <form class="example-form" [formGroup]="bookConfigureForm" (ngSubmit)="saveBook()">
+        <span *ngIf="book.image">
+            <img src="data:image/JPEG;base64,{{book.image}}" style="height: 50px; width:50px;"
+                >
+        </span>
+
+        <button mat-raised-button type="button" color="primary" (click)="imgFileInput.click()"
+                                  style="padding: 5px;">Choose cover of book
+                          </button>
+    <input hidden [(ngModel)]="book.image" type="file" [formControl]="imageFormControl" accept="image/jpeg" #imgFileInput
+                                 (change)="onFileChange($event)"/>
+
+      
+
+        <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="book.name" placeholder="name"
+            type="text"
+            formControlName="name"
+            required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="book.isbn" placeholder="isbn"
+            type="text"
+            formControlName="isbn"
+            required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="book.publishYear" placeholder="publishYear"
+            type="number"
+            formControlName="publishYear"
+            required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="book.pageCount" placeholder="pageCount"
+            type="number"
+            formControlName="pageCount"
+            required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="book.placing" placeholder="placing"
+                type="text"
+                formControlName="placing"
+                required>
+           </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <textarea matInput [(ngModel)]="book.descr" placeholder="descr"
+           
+            formControlName="descr"
+            required>
+            </textarea>
+          </mat-form-field>
+
+          
+            <table >
+                <tr>
+                        <th scope="col">  
+                                <mat-form-field>
+                                        <mat-select [(value)]="book.room" [(ngModel)]="book.room" placeholder="room"  formControlName="room"
+                                        required>
+                                          <mat-option>--</mat-option>
+                                          <mat-option *ngFor="let place of room" [value]="place.name">
+                                            {{place.name}}
+                                          </mat-option>
+                                        </mat-select>
+                                       
+                                        </mat-form-field>
+                                         </th>
+                                         <th scope="col">  
+                                                <mat-form-field>
+                                                        <mat-select [(value)]="book.type" [(ngModel)]="book.type" placeholder="type"  formControlName="type"
+                                                        required>
+                                                          <mat-option>--</mat-option>
+                                                          <mat-option *ngFor="let kind of type" [value]="kind.name">
+                                                            {{kind.name}}
+                                                          </mat-option>
+                                                        </mat-select>
+                                                       
+                                                        </mat-form-field>
+                                                         </th>           
+                    <th scope="col">  
+           <mat-form-field>
+           <mat-select [(value)]="book.genreId" [(ngModel)]="book.genreId" placeholder="select genre"
+           formControlName="genre">
+             <mat-option *ngFor="let genre of genres" [value]="genre.id">
+                            {{ genre.name }}
+             </mat-option>
+             </mat-select>
+             
+             </mat-form-field>
+                    </th>
+                    <th scope="col"> 
+                        <button mat-raised-button type="button" color="primary" (click)="addNewGenre()"
+                        style="padding: 5px;">Add new Genre
+                        </button>
+                    </th>
+                </tr>
+                <tr>                         
+              <th scope="col">  
+                <mat-form-field>
+                  <mat-select [(value)]="book.authorsId" [(ngModel)]="book.authorsId" placeholder="select author" formControlName="author" multiple>
+                    <mat-option *ngFor="let author of authors" [value]="author.id">{{author.name}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </th>
+              <th scope="col"> 
+                <button mat-raised-button type="button" color="primary" (click)="addNewAuthor()"
+                style="padding: 5px;">Add new Author
+              </button>
+            </th>
+            <th scope="col">  
+              <mat-form-field>
+              <mat-select [(value)]="book.publisherId" [(ngModel)]="book.publisherId" placeholder="select publisher"
+              formControlName="publisher">           
+                <mat-option *ngFor="let publisher of publishers" [value]="publisher.id">
+                               {{publisher.name}}
+                </mat-option>
+                </mat-select>
+                
+                </mat-form-field>
+                       </th>
+                       <th scope="col"> 
+                        <button mat-raised-button type="button" color="primary" (click)="addNewPublisher()"
+                        style="padding: 5px;">Add new Publisher
+                        </button>
+                    </th>
+           
+       
+
+            </tr>
+            </table >
+         
+                
+        <button class="submit-button" mat-raised-button type="submit"
+         color="accent" [disabled]="!bookConfigureForm.valid">
+          Click me!
+          
+        </button>
+      </form>
+    </mat-card-content>
+    </mat-card>
+    </div>

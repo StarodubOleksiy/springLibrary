@@ -1,0 +1,19 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Oleksiy" id="201810050111" dbms="MYSQL">
+        <sql>
+            INSERT INTO bookauthor (authorid, bookid) values(1,1);
+            INSERT INTO bookauthor (authorid, bookid) values(2,2);
+            INSERT INTO bookauthor (authorid, bookid) values(3,3);
+            INSERT INTO bookauthor (authorid, bookid) values(4,4);
+            INSERT INTO bookauthor (authorid, bookid) values(5,5);
+            INSERT INTO bookauthor (authorid, bookid) values(6,6);
+       </sql>
+        <comment>Inserting data</comment>
+    </changeSet>
+
+
+</databaseChangeLog>

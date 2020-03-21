@@ -1,0 +1,80 @@
+
+<div class="container-fluid">
+   
+    <div class="row-fluid">
+        <h3>Автори:</h3> 
+            <ul class="nav list-group list-group-horizontal">
+                    <li *ngFor="let author of authors" class="list-group-item list-group-item-action" >
+                            <a routerLink="/books/author/{{author.id}}" > <h6>{{author.name}} </h6></a>
+                    </li>
+                  </ul>
+        <div class="col-lg">
+            
+          <table class="table" >
+            <thead>
+                <tr>
+                  <th colspan="2" scope="col"><h1>
+                    <strong>{{book.name}}</strong>
+                    </h1></th>
+                  </tr>
+              </thead>
+            <tbody>
+           <tr class="text-center">
+        <th rowspan="10" scope="row">
+                <figure class="figure shadow-lg p-3 mb-5 bg-white rounded">
+          <img src="data:image/JPEG;base64,{{book.image}}"  class="figure-img rounded" style="height: 600px; width:500px;">
+        </figure>
+        </th>
+    </tr> 
+<tr> 
+        <th scope="col">    
+            <a  routerLink="/booksbygenre/{{genre.id}}" class="btn btn-link" >Жанр: {{genre.name}}</a>
+          </th>
+        </tr> 
+    <tr> 
+          <th scope="col">    
+                <a  routerLink="/books/publisher/{{publisher.id}}" class="btn btn-link" >Видавництво: {{publisher.name}}</a>
+              </th>
+        
+        </tr>
+        <th scope="col">    
+            <h2>ISBN: {{book.isbn}}</h2>
+          </th>
+          <tr>
+           <th scope="col">    
+              <h2>Рік випуску: {{book.publishYear}}</h2>
+            </th>
+        </tr> 
+        <tr>
+            <th scope="col">    
+                <h2>Сторінок: {{book.pageCount}}</h2>
+             </th>
+            </tr> 
+            <tr>
+                <th scope="col">    
+                    <h2>Тип: {{book.type}}</h2>
+                 </th>
+                </tr> 
+        <tr>
+            <th scope="col">    
+               <h2>Приміщення: {{book.room}}</h2>
+             </th>
+         </tr>  
+       
+          <tr>
+              <th scope="col">    
+                  <h2>Розміщення: {{book.placing}}</h2>
+              </th>
+          </tr> 
+          <tr>
+           <th scope="col">    
+               {{book.descr}}
+           </th>
+       </tr> 
+     
+               </tbody> 
+            </table>
+<button (click)="goBack()">Повернутися на попередню сторінку</button>
+</div>
+</div>
+</div>

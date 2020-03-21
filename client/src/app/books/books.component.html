@@ -1,0 +1,232 @@
+
+<div class="container-fluid">
+  <h1>Books</h1>
+  
+         
+     <form class="example-form table-bordered form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="searchBook()">
+       
+      <mat-slide-toggle 
+        [formControl]="findByPlace" (change)="checkingSearch()" class="m-3 p-3 mx-auto">
+        <div class="m-3 p-3 mx-auto">
+        Змінити  критерій  пошуку
+      </div>
+      </mat-slide-toggle>
+   
+       <mat-form-field class="select-width p-1">
+        <mat-select [(value)]="searchcreateria.type" [(ngModel)]="searchcreateria.type" placeholder="вибрати розташування"  formControlName="type"
+        [disabled]="findByPlace.value === true"
+         >
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let place of room" [value]="place.name">
+            {{place.name}}
+          </mat-option>
+        </mat-select>
+       </mat-form-field>
+         
+
+       <mat-form-field class="input-width">
+          <div class="input-group input-group-lg">
+          <input class="form-control mr-sm-2" matInput [(ngModel)]="searchcreateria.searchWord"
+           placeholder={{searchType}}
+          type="text"
+          formControlName="search"
+          required>
+          </div>
+        </mat-form-field>
+        <span class="input-group-btn">
+      <button class="btn btn-large btn-outline-success my-2 my-sm-0" mat-raised-button type="submit"
+      color="accent" [disabled]="!searchcreateria.searchWord" >
+       Знайти!
+       
+     </button>
+     </span>
+      
+    </form>
+    <div class="m-2 p-2 mx-auto shadow p-3 mb-5 bg-white rounded text-right">
+    <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewBook()">
+        Додати нову книжку
+      </button>
+    </div>
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('А')">А</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Б')">Б</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('В')">В</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Г')">Г</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Д')">Д</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Е')">Е</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ё')">Ё</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Є')">Є</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ж')">Ж</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('З')">З</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('И')">И</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('І')">І</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ї')">Ї</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Й')">Й</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('К')">К</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Л')">Л</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('М')">М</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Н')">Н</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('О')">О</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('П')">П</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Р')">Р</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('С')">C</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Т')">Т</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('У')">У</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ф')">Ф</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Х')">Х</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ц')">Ц</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ч')">Ч</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ш')">Ш</button>
+    </div>
+      <br>
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Щ')">Щ</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ю')">Ю</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Я')">Я</button>
+  </div>
+  <br>
+  <div class="btn-toolbar" role="group" aria-label="First group">
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('A')">A</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('B')">B</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('C')">C</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('D')">D</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('E')">E</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('F')">F</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('G')">G</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('H')">H</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('I')">I</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('J')">J</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('K')">K</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('L')">L</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('M')">M</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('N')">N</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('O')">O</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('P')">P</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Q')">Q</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('R')">R</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('S')">S</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('T')">T</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('U')">U</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('V')">V</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('W')">W</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('X')">X</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Y')">Y</button>
+      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Z')">Z</button>
+    </div>
+  <div class="row-fluid">
+     
+<div class="alert alert-dark" role="alert"><p>По вашому запиту знайдено <strong>{{books.length}}</strong> книжок</p></div>
+     
+<div class="col-lg-4 shadow-lg p-3 mb-5 bg-white rounded" >  
+ 
+  <mat-card>
+   
+<ul class="nav list-group d-flex justify-content-between align-items-left shadow p-2 mb-2 bg-white rounded" >
+    <li class="nav-header">Жанри книжок</li>
+  <li class="list-group-item shadow p-1 mb-1 bg-white rounded" role="presentation" *ngFor="let genre of returnedGenres"
+    (click)="onSelect(genre)" align="left">
+     <span class="list-group-item">
+  <a class="list-group-item shadow-sm p-2 mb-2 bg-white rounded" routerLink="/booksbygenre/{{genre.id}}" >{{genre.name}}</a>
+  <div class="m-1 pb-1">
+  <button  mat-raised-button
+  matTooltip="Click on this button to edit genre"
+  aria-label="Button that displays a tooltip when focused or hovered over"
+   (click)="editGenre(genre.id)">
+    <i class="material-icons">
+      edit
+      </i>
+  </button>
+  <button  
+  mat-raised-button
+  matTooltip="Click on this button to delete genre"
+  aria-label="Button that displays a tooltip when focused or hovered over"
+    (click)="onGenreDeleteClick(genre)">
+    <i class="material-icons" >
+      delete
+      </i>
+  </button>
+</div>
+</span>
+  </li>
+</ul>
+</mat-card>
+<div class="m-2 p-2 mx-auto">
+  <pagination [totalItems]="genres.length" (pageChanged)="pageGenreChanged($event)"></pagination>
+</div>
+</div>
+
+ <div class="col-lg-8 shadow-lg p-3 mb-5 bg-white rounded" >
+      <mat-card>
+    <mat-grid-list cols="2" >
+        <mat-grid-tile *ngFor="let book of returnedBooks" class="book" >
+                    <div class="w-90 p-3 h-90 d-inline-block mx-auto book" >
+                         
+                           <table class="table-bordered" >
+                <thead>
+                    <tr>
+                      <th colspan="2" scope="col"><h6>
+                          <a class="list-group-item" routerLink="/books/{{book.id}}">
+                            <strong>{{book.name}}</strong>
+                        </a>
+                      </h6></th>
+                      </tr>
+                  </thead>
+                <tbody>
+               <tr class="text-center">
+            <th rowspan="3" scope="row">
+                <div class="text-center">
+              <img src="data:image/JPEG;base64,{{book.image}}" class="rounded img-thumbnail" style="height: 180px; width:150px;">
+            </div>
+            </th>
+          
+            <th scope="col">    
+                ISBN: <h6>{{book.isbn}}</h6>
+              </th>
+            </tr>
+              <tr>
+               <th scope="col">    
+                 Рік випуску: {{book.publishYear}}
+                </th>
+            </tr>  
+            <tr>
+              <th scope="col">    
+                Сторінок: {{book.pageCount}}
+               </th>
+           </tr> 
+            <tr>
+                <th scope="col">    
+                    <button type="button" class="btn btn-primary btn-sm" (click)="editBook(book.id)">
+                        Редагувати книжку
+                      </button> 
+                 </th>
+                 <th scope="col">    
+                    <button type="button" class="btn btn-primary btn-sm" (click)="onBookDeleteClick(book)">
+                        Видалити книжку
+                      </button> 
+                 </th>
+             </tr>
+                </tbody> 
+                </table>
+               
+                     </div>
+                       </mat-grid-tile>
+      </mat-grid-list>
+      <div class="m-2 p-2 mx-auto">
+      <pagination [totalItems]="books.length" (pageChanged)="pageChanged($event)"></pagination>
+    </div>
+    </mat-card>
+ </div>
+
+</div>
+ 
+
+
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+          <mat-card-header>
+              <div *ngIf="configureType.text === 'edit'">
+                  <legend>Відредагувати видавництво</legend>
+              </div>
+              <div *ngIf="configureType.text === 'add'">
+                  <legend>Додати нове видавництво</legend>
+              </div>
+          </mat-card-header>
+          <mat-card-content>
+  <form class="example-form" [formGroup]="publisherConfigureForm" (ngSubmit)="savePublisher()">
+          
+                                          
+          <mat-form-field class="example-full-width">
+          <input matInput  placeholder="Name"
+                [(ngModel)]="publisher.name"
+                 type="text"
+                 formControlName="name"
+                 required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput  placeholder="City"
+              [(ngModel)]="publisher.city"
+               type="text"
+               formControlName="city"
+               required>
+    </mat-form-field>
+  
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!publisherConfigureForm.valid">                               
+        Click me!
+              </button>
+    </form>
+  </mat-card-content>
+  <button (click)="goBack()">Повернутися на попередню сторінку</button>
+  </mat-card>
+  </div>

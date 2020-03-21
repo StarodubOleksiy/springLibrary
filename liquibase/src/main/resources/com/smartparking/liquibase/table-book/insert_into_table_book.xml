@@ -1,0 +1,31 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Oleksiy" id="201803202016" dbms="MYSQL">
+        <sql>
+            INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
+            values('Melovoy chelovek',288,'978-617-12-4331-6',2018,'something about  murder  of  young  girl  and   other  peoples',
+            'FIRSTROOM','BOOK','jakiys stelash',1,1);
+            INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
+            values('Mirror from the past',336,'978-617-12-4740-6',2018,'something about  murder  of  young  girl  and   other  peoples and  killer with the  mirror from the past',
+            'FIRSTROOM','BOOK','jakiys stelash',2,1);
+            INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
+            values('Cemetry of domestic animals',400,'978-966-14-9118-1',2015,'something about domestic cat  whose kill  a track but  it is still allive because it  was at some cemetry',
+            'SECONDROOM','BOOK','jakiys stelash',3,1);
+            INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
+            values('I swear to take revenge',256,'978-617-12-4489-4',2018,'something about revenge  of  people and  nice girl, to bad  guys who killed  their relatives by arrea  of the  house and ',
+            'THIRDROOM','BOOK','jakiys stelash',2,1);
+            INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
+            values('If you love, let go',256,'978-617-12-4730-7',2018,'something about girl who loves one  man  but  she thought that he has  been  killed at war, and she was married by another. But he is still alive',
+            'FIRSTROOM','BOOK','jakiys stelash',4,1);
+            INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
+            values('Lose weight together',176,'978-617-12-4716-1',2018,'Some Biographi about  popular ukraininan singing Natalija Mogilevskaya',
+            'FIRSTROOM','BOOK','jakiys stelash',5,1);
+        </sql>
+        <comment>Inserting data</comment>
+    </changeSet>
+
+
+</databaseChangeLog>

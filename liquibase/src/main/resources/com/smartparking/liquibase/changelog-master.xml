@@ -1,0 +1,18 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="com/smartparking/liquibase/table-genre/create_table_genre.xml"/>
+    <include file="com/smartparking/liquibase/table-genre/insert_into_table_genre.xml"/>
+    <include file="com/smartparking/liquibase/table-publisher/create_table_publisher.xml"/>
+    <include file="com/smartparking/liquibase/table-publisher/insert_into_table_publisher.xml"/>
+    <include file="com/smartparking/liquibase/table-book/create_table_book.xml"/>
+    <include file="com/smartparking/liquibase/table-book/insert_into_table_book.xml"/>
+    <include file="com/smartparking/liquibase/table-author/create_table_author.xml"/>
+    <include file="com/smartparking/liquibase/table-author/insert_into_table_author.xml"/>
+    <include file="com/smartparking/liquibase/table-bookAuthor/create_table_bookAuthor.xml"/>
+    <include file="com/smartparking/liquibase/table-bookAuthor/insert_into_table_bookAuthor.xml"/>
+
+
+</databaseChangeLog>

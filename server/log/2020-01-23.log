@@ -1,0 +1,162 @@
+2020-01-23 03:05:43 - Starting App on DESKTOP-T7EOC95 with PID 29996 (C:\Springlibrary\springLibrary\server\target\classes started by haiam in C:\Springlibrary\springLibrary)
+2020-01-23 03:05:43 - No active profile set, falling back to default profiles: default
+2020-01-23 03:05:43 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@d6fc9f7: startup date [Thu Jan 23 03:05:43 EET 2020]; root of context hierarchy
+2020-01-23 03:05:44 - Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$f5fa8494] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-23 03:05:44 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2f8ec666] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-23 03:05:44 - Tomcat initialized with port(s): 8080 (http)
+2020-01-23 03:05:44 - Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-23 03:05:44 - Starting service [Tomcat]
+2020-01-23 03:05:44 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2020-01-23 03:05:44 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;C:\maven\bin;C:\maven\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\PostgreSQL\pg10\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\haiam\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\haiam\AppData\Local\Programs\Python\Python37-32\;C:\Users\haiam\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\haiam\AppData\Roaming\npm;C:\Users\haiam\AppData\Local\GitHubDesktop\bin;C:\Users\haiam\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Docker Toolbox;.]
+2020-01-23 03:05:44 - Initializing Spring embedded WebApplicationContext
+2020-01-23 03:05:44 - Root WebApplicationContext: initialization completed in 1654 ms
+2020-01-23 03:05:45 - Servlet dispatcherServlet mapped to [/]
+2020-01-23 03:05:45 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-23 03:05:45 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-23 03:05:45 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-23 03:05:45 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-23 03:05:45 - HikariPool-1 - Starting...
+2020-01-23 03:05:46 - HikariPool-1 - Start completed.
+2020-01-23 03:05:46 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-01-23 03:05:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-23 03:05:46 - HHH000412: Hibernate Core {5.2.10.Final}
+2020-01-23 03:05:46 - HHH000206: hibernate.properties not found
+2020-01-23 03:05:46 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-01-23 03:05:47 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-23 03:05:47 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-23 03:05:48 - HHH000397: Using ASTQueryTranslatorFactory
+2020-01-23 03:05:48 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@d6fc9f7: startup date [Thu Jan 23 03:05:43 EET 2020]; root of context hierarchy
+2020-01-23 03:05:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-23 03:05:48 - Mapped "{[/author/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.AuthorController.delete(springLibrary.model.request.AuthorRequest)
+2020-01-23 03:05:48 - Mapped "{[/addauthor/save],methods=[POST]}" onto org.springframework.http.ResponseEntity<?> springLibrary.controller.AuthorController.save(springLibrary.model.request.AuthorRequest)
+2020-01-23 03:05:48 - Mapped "{[/author/findbycharacter],methods=[GET]}" onto public java.util.List<springLibrary.model.response.AuthorResponse> springLibrary.controller.AuthorController.getAuthorByCharacter(java.lang.String)
+2020-01-23 03:05:48 - Mapped "{[/authors],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.AuthorResponse>> springLibrary.controller.AuthorController.authors()
+2020-01-23 03:05:48 - Mapped "{[/getbybook/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.AuthorResponse> springLibrary.controller.AuthorController.getAuthorsByBook(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/author/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.AuthorController.getAuthorById(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/author/findbyname],methods=[GET]}" onto public java.util.List<springLibrary.model.response.AuthorResponse> springLibrary.controller.AuthorController.getAuthorsByName(java.lang.String)
+2020-01-23 03:05:48 - Mapped "{[/book/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.BookController.delete(springLibrary.model.request.BookRequest)
+2020-01-23 03:05:48 - Mapped "{[/books/save],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.BookController.save(springLibrary.model.request.BookRequest)
+2020-01-23 03:05:48 - Mapped "{[/books/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.BookController.configure(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/book/findbycharacter],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.getBookByCharacter(java.lang.String)
+2020-01-23 03:05:48 - Mapped "{[/getbypublisher/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.getBooksByPublisher(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/books],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.BookResponse>> springLibrary.controller.BookController.books()
+2020-01-23 03:05:48 - Mapped "{[/book/findbyname],methods=[GET]}" onto public java.util.List<springLibrary.entities.Book> springLibrary.controller.BookController.getBookByName()
+2020-01-23 03:05:48 - Mapped "{[/getbyauthor/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.getBooksByAuthor(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/book/findbycriteria],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.BookResponse>> springLibrary.controller.BookController.findBooks(springLibrary.model.request.CriteriaRequest)
+2020-01-23 03:05:48 - Mapped "{[/getbygenre/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.findByGenreBooks(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/genre/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.GenreController.delete(springLibrary.model.request.GenreRequest)
+2020-01-23 03:05:48 - Mapped "{[/addgenre/save],methods=[POST]}" onto org.springframework.http.ResponseEntity<?> springLibrary.controller.GenreController.save(springLibrary.model.request.GenreRequest)
+2020-01-23 03:05:48 - Mapped "{[/genre/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.GenreController.configure(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/booksbygenres],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.GenreResponse>> springLibrary.controller.GenreController.genres()
+2020-01-23 03:05:48 - Mapped "{[/publisher/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.PublisherController.delete(springLibrary.model.request.PublisherRequest)
+2020-01-23 03:05:48 - Mapped "{[/addpublisher/save],methods=[POST]}" onto org.springframework.http.ResponseEntity<?> springLibrary.controller.PublisherController.save(springLibrary.model.request.PublisherRequest)
+2020-01-23 03:05:48 - Mapped "{[/publisher/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.PublisherController.configure(java.lang.Long)
+2020-01-23 03:05:48 - Mapped "{[/publisher/findbycharacter],methods=[GET]}" onto public java.util.List<springLibrary.model.response.PublisherResponse> springLibrary.controller.PublisherController.getPublisherByCharacter(java.lang.String)
+2020-01-23 03:05:48 - Mapped "{[/publisher/findbycriteria],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.PublisherResponse>> springLibrary.controller.PublisherController.findPublishers(springLibrary.model.request.PublisherSearchCreateria)
+2020-01-23 03:05:48 - Mapped "{[/booksbypublisher],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.PublisherResponse>> springLibrary.controller.PublisherController.publishers()
+2020-01-23 03:05:48 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-23 03:05:48 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-23 03:05:48 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-23 03:05:48 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-23 03:05:48 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-23 03:05:48 - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-01-23 03:05:49 - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@d6fc9f7: startup date [Thu Jan 23 03:05:43 EET 2020]; root of context hierarchy] and template loader path [classpath:/templates/]
+2020-01-23 03:05:49 - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-01-23 03:05:49 - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-01-23 03:05:49 - LiveReload server is running on port 35729
+2020-01-23 03:05:49 - Registering beans for JMX exposure on startup
+2020-01-23 03:05:49 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-01-23 03:05:49 - Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2020-01-23 03:05:49 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2020-01-23 03:05:49 - Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2020-01-23 03:05:49 - Starting beans in phase 2147483647
+2020-01-23 03:05:49 - Starting ProtocolHandler ["http-nio-8080"]
+2020-01-23 03:05:49 - Using a shared selector for servlet write/read
+2020-01-23 03:05:49 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-23 03:05:49 - Started App in 6.585 seconds (JVM running for 8.448)
+2020-01-23 03:06:29 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-23 03:06:29 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-23 03:06:29 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2020-01-23 13:05:20 - Starting App on DESKTOP-T7EOC95 with PID 25728 (C:\Springlibrary\springLibrary\server\target\classes started by haiam in C:\Springlibrary\springLibrary)
+2020-01-23 13:05:20 - No active profile set, falling back to default profiles: default
+2020-01-23 13:05:20 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8464f74: startup date [Thu Jan 23 13:05:20 EET 2020]; root of context hierarchy
+2020-01-23 13:05:21 - Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$d516736] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-23 13:05:21 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$46e5a908] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-23 13:05:21 - Tomcat initialized with port(s): 8080 (http)
+2020-01-23 13:05:21 - Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-23 13:05:21 - Starting service [Tomcat]
+2020-01-23 13:05:21 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2020-01-23 13:05:21 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;C:\maven\bin;C:\maven\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\PostgreSQL\pg10\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\haiam\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\haiam\AppData\Local\Programs\Python\Python37-32\;C:\Users\haiam\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\haiam\AppData\Roaming\npm;C:\Users\haiam\AppData\Local\GitHubDesktop\bin;C:\Users\haiam\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Docker Toolbox;.]
+2020-01-23 13:05:22 - Initializing Spring embedded WebApplicationContext
+2020-01-23 13:05:22 - Root WebApplicationContext: initialization completed in 1654 ms
+2020-01-23 13:05:22 - Servlet dispatcherServlet mapped to [/]
+2020-01-23 13:05:22 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-23 13:05:22 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-23 13:05:22 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-23 13:05:22 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-23 13:05:22 - HikariPool-1 - Starting...
+2020-01-23 13:05:23 - HikariPool-1 - Start completed.
+2020-01-23 13:05:23 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-01-23 13:05:23 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-23 13:05:23 - HHH000412: Hibernate Core {5.2.10.Final}
+2020-01-23 13:05:23 - HHH000206: hibernate.properties not found
+2020-01-23 13:05:23 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-01-23 13:05:24 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-23 13:05:25 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-23 13:05:25 - HHH000397: Using ASTQueryTranslatorFactory
+2020-01-23 13:05:25 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8464f74: startup date [Thu Jan 23 13:05:20 EET 2020]; root of context hierarchy
+2020-01-23 13:05:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-23 13:05:25 - Mapped "{[/author/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.AuthorController.delete(springLibrary.model.request.AuthorRequest)
+2020-01-23 13:05:25 - Mapped "{[/addauthor/save],methods=[POST]}" onto org.springframework.http.ResponseEntity<?> springLibrary.controller.AuthorController.save(springLibrary.model.request.AuthorRequest)
+2020-01-23 13:05:25 - Mapped "{[/authors],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.AuthorResponse>> springLibrary.controller.AuthorController.authors()
+2020-01-23 13:05:25 - Mapped "{[/author/findbyname],methods=[GET]}" onto public java.util.List<springLibrary.model.response.AuthorResponse> springLibrary.controller.AuthorController.getAuthorsByName(java.lang.String)
+2020-01-23 13:05:25 - Mapped "{[/getbybook/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.AuthorResponse> springLibrary.controller.AuthorController.getAuthorsByBook(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/author/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.AuthorController.getAuthorById(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/author/findbycharacter],methods=[GET]}" onto public java.util.List<springLibrary.model.response.AuthorResponse> springLibrary.controller.AuthorController.getAuthorByCharacter(java.lang.String)
+2020-01-23 13:05:25 - Mapped "{[/book/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.BookController.delete(springLibrary.model.request.BookRequest)
+2020-01-23 13:05:25 - Mapped "{[/books/save],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.BookController.save(springLibrary.model.request.BookRequest)
+2020-01-23 13:05:25 - Mapped "{[/books/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.BookController.configure(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/getbygenre/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.findByGenreBooks(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/book/findbyname],methods=[GET]}" onto public java.util.List<springLibrary.entities.Book> springLibrary.controller.BookController.getBookByName()
+2020-01-23 13:05:25 - Mapped "{[/book/findbycriteria],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.BookResponse>> springLibrary.controller.BookController.findBooks(springLibrary.model.request.CriteriaRequest)
+2020-01-23 13:05:25 - Mapped "{[/books],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.BookResponse>> springLibrary.controller.BookController.books()
+2020-01-23 13:05:25 - Mapped "{[/getbyauthor/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.getBooksByAuthor(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/book/findbycharacter],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.getBookByCharacter(java.lang.String)
+2020-01-23 13:05:25 - Mapped "{[/getbypublisher/{id}],methods=[GET]}" onto public java.util.List<springLibrary.model.response.BookResponse> springLibrary.controller.BookController.getBooksByPublisher(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/genre/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.GenreController.delete(springLibrary.model.request.GenreRequest)
+2020-01-23 13:05:25 - Mapped "{[/addgenre/save],methods=[POST]}" onto org.springframework.http.ResponseEntity<?> springLibrary.controller.GenreController.save(springLibrary.model.request.GenreRequest)
+2020-01-23 13:05:25 - Mapped "{[/genre/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.GenreController.configure(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/booksbygenres],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.GenreResponse>> springLibrary.controller.GenreController.genres()
+2020-01-23 13:05:25 - Mapped "{[/publisher/delete],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.PublisherController.delete(springLibrary.model.request.PublisherRequest)
+2020-01-23 13:05:25 - Mapped "{[/addpublisher/save],methods=[POST]}" onto org.springframework.http.ResponseEntity<?> springLibrary.controller.PublisherController.save(springLibrary.model.request.PublisherRequest)
+2020-01-23 13:05:25 - Mapped "{[/publisher/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> springLibrary.controller.PublisherController.configure(java.lang.Long)
+2020-01-23 13:05:25 - Mapped "{[/booksbypublisher],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.PublisherResponse>> springLibrary.controller.PublisherController.publishers()
+2020-01-23 13:05:25 - Mapped "{[/publisher/findbycriteria],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<springLibrary.model.response.PublisherResponse>> springLibrary.controller.PublisherController.findPublishers(springLibrary.model.request.PublisherSearchCreateria)
+2020-01-23 13:05:25 - Mapped "{[/publisher/findbycharacter],methods=[GET]}" onto public java.util.List<springLibrary.model.response.PublisherResponse> springLibrary.controller.PublisherController.getPublisherByCharacter(java.lang.String)
+2020-01-23 13:05:25 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-23 13:05:25 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-23 13:05:26 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-23 13:05:26 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-23 13:05:26 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-23 13:05:26 - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-01-23 13:05:26 - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8464f74: startup date [Thu Jan 23 13:05:20 EET 2020]; root of context hierarchy] and template loader path [classpath:/templates/]
+2020-01-23 13:05:26 - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-01-23 13:05:26 - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-01-23 13:05:26 - LiveReload server is running on port 35729
+2020-01-23 13:05:26 - Registering beans for JMX exposure on startup
+2020-01-23 13:05:26 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-01-23 13:05:26 - Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2020-01-23 13:05:26 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2020-01-23 13:05:26 - Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2020-01-23 13:05:26 - Starting beans in phase 2147483647
+2020-01-23 13:05:26 - Starting ProtocolHandler ["http-nio-8080"]
+2020-01-23 13:05:26 - Using a shared selector for servlet write/read
+2020-01-23 13:05:26 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-23 13:05:26 - Started App in 6.683 seconds (JVM running for 8.334)
+2020-01-23 13:06:02 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-23 13:06:02 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-23 13:06:02 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms

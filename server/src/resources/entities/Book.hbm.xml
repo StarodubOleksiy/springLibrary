@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class catalog="library" name="springLibrary.entities.Book" table="book">
+    <id name="id" type="java.lang.Long">
+        <column name="id"/>
+        <generator class="identity"/>
+    </id>
+
+
+    <property name="name" type="string">
+        <column length="45" name="name" not-null="true"/>
+    </property>
+
+    <property name="pageCount" type="java.lang.Integer">
+        <column name="page_count" not-null="true"/>
+    </property>
+    <property name="isbn" type="string">
+        <column length="100" name="isbn" not-null="true" unique="true"/>
+    </property>
+    <property name="publishYear" type="java.lang.Integer">
+        <column name="publish_year" not-null="true"/>
+    </property>
+
+      <property name="descr" type="string">
+       <column length="5000" name="descr"/>
+    </property>
+
+    <property name="room" column="ROOM">
+        <type name="org.hibernate.type.EnumType">
+            <param name="enumClass">springLibrary.enums.Room</param>
+            <param name="useNamed">true</param>
+        </type>
+    </property>
+
+
+    <property name="type" column="TYPE">
+        <type name="org.hibernate.type.EnumType">
+            <param name="enumClass">springLibrary.enums.Type</param>
+            <param name="useNamed">true</param>
+        </type>
+    </property>
+
+    <property name="placing" type="string">
+        <column length="100" name="placing"/>
+    </property>
+
+    <property name="image" type="binary">
+        <column name="image" not-null="false"/>
+    </property>
+
+
+    <set name="authors" table="bookauthor"
+         inverse="false" lazy="false" fetch="select" cascade="all">
+        <key>
+            <column name="bookid"/>
+        </key>
+        <many-to-many entity-name="springLibrary.entities.Author">
+            <column name="authorid" not-null="true"/>
+        </many-to-many>
+    </set>
+
+
+     <many-to-one class="springLibrary.entities.Genre" fetch="join" name="genre" lazy="false">
+        <column name="genre_id" not-null="true"/>
+    </many-to-one>
+
+
+    <many-to-one class="springLibrary.entities.Publisher" fetch="join" name="publisher" lazy="false">
+        <column name="publisher_id" not-null="true"/>
+    </many-to-one>
+
+
+
+</class>
+</hibernate-mapping>

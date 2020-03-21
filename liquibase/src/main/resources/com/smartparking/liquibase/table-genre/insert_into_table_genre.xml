@@ -1,0 +1,19 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Oleksiy" id="201810050037" dbms="MYSQL">
+        <sql>
+            INSERT INTO genre (name) values('triller');
+            INSERT INTO genre (name) values('detective');
+            INSERT INTO genre (name) values('horrors');
+            INSERT INTO genre (name) values('love stories');
+            INSERT INTO genre (name) values('health and beauty');
+
+        </sql>
+        <comment>Inserting data</comment>
+    </changeSet>
+
+
+</databaseChangeLog>
