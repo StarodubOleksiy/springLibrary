@@ -286,7 +286,7 @@ findByCharacter(character:string):void
   selector: 'ngbd-modal-confirm',
   template: `
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-title">Profile deletion</h4>
+    <h4 class="modal-title" id="modal-title">Book deletion</h4>
     <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
