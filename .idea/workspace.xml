@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.ts" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -403,14 +402,7 @@
       <workItem from="1584810600284" duration="1081000" />
       <workItem from="1584815530292" duration="2016000" />
       <workItem from="1584860969060" duration="1517000" />
-      <workItem from="1584872853025" duration="478000" />
-    </task>
-    <task id="LOCAL-00029" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
-      <created>1579561806907</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1579561806907</updated>
+      <workItem from="1584872853025" duration="508000" />
     </task>
     <task id="LOCAL-00030" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
       <created>1579561827705</created>
@@ -748,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584873171650</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Third commit. Adding beautiful confirmation window to delete book.">
+      <created>1584873346414</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1584873346415</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203054000" />
+    <option name="totallyTimeSpent" value="203084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
