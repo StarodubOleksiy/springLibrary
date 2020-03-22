@@ -1231,3 +1231,4 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2020-03-21 20:34:14 - Initializing Spring FrameworkServlet 'dispatcherServlet'
 2020-03-21 20:34:14 - FrameworkServlet 'dispatcherServlet': initialization started
 2020-03-21 20:34:14 - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2020-03-21 22:04:32 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m53s362ms18µs900ns).

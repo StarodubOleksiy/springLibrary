@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client.iml" afterPath="$PROJECT_DIR$/client/client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.html" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.ts" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multi-module-springlibrary.iml" afterPath="$PROJECT_DIR$/multi-module-springlibrary.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/log/2020-03-21.log" afterPath="$PROJECT_DIR$/server/log/2020-03-21.log" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
@@ -427,14 +422,7 @@
       <workItem from="1584808415537" duration="719000" />
       <workItem from="1584810600284" duration="1081000" />
       <workItem from="1584815530292" duration="2016000" />
-      <workItem from="1584860969060" duration="690000" />
-    </task>
-    <task id="LOCAL-00023" summary="Eleven commit. Design pages. Make them better">
-      <created>1579200276666</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1579200276666</updated>
+      <workItem from="1584860969060" duration="790000" />
     </task>
     <task id="LOCAL-00024" summary="Eleven commit. Design pages. Make them better">
       <created>1579200419005</created>
@@ -772,11 +760,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584818778398</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Third commit. Adding beautiful confirmation window to delete book.">
+      <created>1584871568475</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1584871568475</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201749000" />
+    <option name="totallyTimeSpent" value="201849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -882,7 +877,8 @@
     <MESSAGE value="Fifteenth commit. Decorating publisher page and adding pagination to genres." />
     <MESSAGE value="Sixteenth commit. Adding new design to main menu." />
     <MESSAGE value="Second commit. Adding new design to main menu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit. Adding new design to main menu." />
+    <MESSAGE value="Third commit. Adding beautiful confirmation window to delete book." />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit. Adding beautiful confirmation window to delete book." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
