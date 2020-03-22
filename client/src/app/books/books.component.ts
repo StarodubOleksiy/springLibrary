@@ -10,6 +10,9 @@ import * as HttpStatus from 'http-status-codes';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { SearchCreateria } from '../SearchCreateria';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @Component({
@@ -55,13 +58,13 @@ checkingSearch() {
 } ;
   
 
-  constructor(private bookService: BookService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private genreService: GenreService,
+  constructor(public bookService: BookService,
+    public router: Router,
+    public route: ActivatedRoute,
+    public genreService: GenreService,
     public snackBar: MatSnackBar,
-   
-  ) { 
+    public _modalService: NgbModal
+     ) { 
 
     }
 
@@ -208,7 +211,7 @@ addNewBook() :void {
 }
 
 
-onGenreDeleteClick(genre: Genre): void {
+public onGenreDeleteClick(genre: Genre): void {
   var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей жанр?');
   if (deleteConfirmation)  
   this.genreService.deleteGenre(genre)
@@ -232,27 +235,17 @@ private onDeleteGenreResponse(genre: Genre, response: HttpResponse<any>): void {
   }
 }
 
-
-onBookDeleteClick(book: Book): void {
-  var deleteConfirmation = confirm('Ви впевнені що хочете видалити дану книжку');
-  if (deleteConfirmation)  
-  this.bookService.deleteBook(book)
-              .subscribe(response => this.onDeleteBookResponse(book, response));
-      
+open(book: Book) {//NgbdModalConfirm
+  const modalRef = this._modalService.open(NgbdModalConfirm);
+ // modalRef.componentInstance.id = id;
+ modalRef.componentInstance.book = book;
+ modalRef.componentInstance.bookComponent = this;
+ modalRef.componentInstance.snackBar = this.snackBar;
 }
 
-private onDeleteBookResponse(book: Book, response: HttpResponse<any>): void {
-  if (response.status === HttpStatus.OK) {
-      this.snackBar.open('Book deleted sucsessfully.', null, {
-          duration: 2000
-      });
-      let index = this.books.indexOf(book);
-      this.books.splice(index, 1);
-      this.returnedBooks.splice(index, 1);
-  }
-}
+//--------------------------------------------------------------------------------
 
-
+//--------------------------------------------------------------------------------
 pageChanged(event: PageChangedEvent): void {
   const startItem = (event.page - 1) * event.itemsPerPage;
   const endItem = event.page * event.itemsPerPage;
@@ -286,4 +279,83 @@ findByCharacter(character:string):void
 
 
 
+}
+
+
+@Component({
+  selector: 'ngbd-modal-confirm',
+  template: `
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Profile deletion</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to delete <span class="text-primary">{{book.name}}</span> book?</strong></p>
+    <p>All information associated to this user profile will be permanently deleted.
+    <span class="text-danger">This operation can not be undone.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="onBookDeleteClick()">Ok</button>
+  </div>
+  `
+})
+
+export class NgbdModalConfirm  {
+  id : number;
+  book: Book;
+  snackBar: MatSnackBar;
+  bookComponent: BooksComponent;
+  public selectedId:number;
+  constructor(public modal: NgbActiveModal
+    ) {
+
+    }
+    onBookDeleteClick(): void {
+      this.bookComponent.bookService.deleteBook(this.book)
+                  .subscribe(response => {
+                    this.modal.close();
+                    this.onDeleteBookResponse(this.book, response)
+                  }
+                    );      
+    }   
+    
+    private onDeleteBookResponse(book: Book, response: HttpResponse<any>): void {
+      if (response.status === HttpStatus.OK) {
+             this.snackBar.open('Book deleted sucsessfully.', null, {
+              duration: 2000
+          });          
+          let index = this.bookComponent.books.indexOf(book);
+          this.bookComponent.books.splice(index, 1);
+          this.bookComponent.returnedBooks.splice(index, 1);
+          console.log('==============.bookComponent.selectedId================='+this.bookComponent.selectedId);
+          this.selectedId = parseInt(this.bookComponent.route.snapshot.paramMap.get('id'));
+            if(isNaN(this.bookComponent.selectedId) === true)
+            {
+             // console.log('this.bookComponent.route.toString() = '+this.bookComponent.route.toString());
+              console.log('==============selectedId================='+this.selectedId);
+              console.log('==============is nun nothing includes=================');
+          //this.bookComponent.router.navigate(['books']);
+          this.bookComponent.ngOnInit();
+            }
+          else if(this.bookComponent.route.toString().includes("author"))
+           {
+         console.log('==============includes authors=================');
+         this.bookComponent.getBooksByAuthor(this.selectedId);
+           } 
+         else if(this.bookComponent.route.toString().includes("publisher"))
+          {
+         this.bookComponent.getBooksByPublisher(this.selectedId);
+         console.log('==============includes publishers=================');
+          } 
+         else {
+          console.log('==============includes genres=================');
+          this.bookComponent.getBooksByGenre(this.selectedId);        
+        }
+      }
+    }
+  
 }

@@ -9,6 +9,7 @@ import { AuthorService } from './author.service';
 import { PublisherService } from './publisher.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { BooksComponent } from './books/books.component';
+import { NgbdModalConfirm } from './books/books.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -32,6 +33,8 @@ import { AddAuthorComponent } from './add-author/add-author.component';
 import { AddPublisherComponent } from './add-publisher/add-publisher.component';
 import { PublishersComponent } from './publishers/publishers.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {NgbModule,NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
 
 
 
@@ -58,7 +61,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatSidenavModule,
     MatTooltipModule,
     MatSlideToggleModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -69,9 +73,11 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     SavebookComponent,
     AddAuthorComponent,
     AddPublisherComponent,
-    PublishersComponent
-  
+    PublishersComponent,
+    NgbdModalConfirm
+     
   ],
+   entryComponents: [NgbdModalConfirm],
    providers: [BookService, GenreService,AuthorService,PublisherService], 
    bootstrap: [AppComponent]
 })
