@@ -307,9 +307,7 @@ findByCharacter(character:string):void
 export class NgbdModalConfirm  {
   id : number;
   book: Book;
-  snackBar: MatSnackBar;
   bookComponent: BooksComponent;
-  public selectedId:number;
   constructor(public modal: NgbActiveModal
     ) {
 
@@ -325,35 +323,32 @@ export class NgbdModalConfirm  {
     
     private onDeleteBookResponse(book: Book, response: HttpResponse<any>): void {
       if (response.status === HttpStatus.OK) {
-             this.snackBar.open('Book deleted sucsessfully.', null, {
+             this.bookComponent.snackBar.open('Book deleted sucsessfully.', null, {
               duration: 2000
           });          
           let index = this.bookComponent.books.indexOf(book);
           this.bookComponent.books.splice(index, 1);
           this.bookComponent.returnedBooks.splice(index, 1);
           console.log('==============.bookComponent.selectedId================='+this.bookComponent.selectedId);
-          this.selectedId = parseInt(this.bookComponent.route.snapshot.paramMap.get('id'));
             if(isNaN(this.bookComponent.selectedId) === true)
             {
-             // console.log('this.bookComponent.route.toString() = '+this.bookComponent.route.toString());
-              console.log('==============selectedId================='+this.selectedId);
+              console.log('==============selectedId================='+this.bookComponent.selectedId);
               console.log('==============is nun nothing includes=================');
-          //this.bookComponent.router.navigate(['books']);
           this.bookComponent.ngOnInit();
             }
           else if(this.bookComponent.route.toString().includes("author"))
            {
          console.log('==============includes authors=================');
-         this.bookComponent.getBooksByAuthor(this.selectedId);
+         this.bookComponent.getBooksByAuthor(this.bookComponent.selectedId);
            } 
          else if(this.bookComponent.route.toString().includes("publisher"))
           {
-         this.bookComponent.getBooksByPublisher(this.selectedId);
+         this.bookComponent.getBooksByPublisher(this.bookComponent.selectedId);
          console.log('==============includes publishers=================');
           } 
          else {
           console.log('==============includes genres=================');
-          this.bookComponent.getBooksByGenre(this.selectedId);        
+          this.bookComponent.getBooksByGenre(this.bookComponent.selectedId);        
         }
       }
     }

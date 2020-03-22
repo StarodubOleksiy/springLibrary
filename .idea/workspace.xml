@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/log/2020-03-21.log" afterPath="$PROJECT_DIR$/server/log/2020-03-21.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.ts" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,7 +41,7 @@
       <file leaf-file-name="publishers.component.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/app/publishers/publishers.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
+            <state relative-caret-position="696">
               <caret line="132" column="12" lean-forward="false" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
               <folding />
             </state>
@@ -422,14 +422,7 @@
       <workItem from="1584808415537" duration="719000" />
       <workItem from="1584810600284" duration="1081000" />
       <workItem from="1584815530292" duration="2016000" />
-      <workItem from="1584860969060" duration="790000" />
-    </task>
-    <task id="LOCAL-00024" summary="Eleven commit. Design pages. Make them better">
-      <created>1579200419005</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1579200419005</updated>
+      <workItem from="1584860969060" duration="1402000" />
     </task>
     <task id="LOCAL-00025" summary="Eleven commit. Design pages. Make them better">
       <created>1579201749335</created>
@@ -767,11 +760,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584871568475</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Third commit. Adding beautiful confirmation window to delete book.">
+      <created>1584871589901</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1584871589901</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201849000" />
+    <option name="totallyTimeSpent" value="202461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -1223,7 +1223,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/publishers/publishers.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
+        <state relative-caret-position="696">
           <caret line="132" column="12" lean-forward="false" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
           <folding />
         </state>
