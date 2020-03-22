@@ -293,7 +293,7 @@ findByCharacter(character:string):void
   </div>
   <div class="modal-body">
     <p><strong>Are you sure you want to delete <span class="text-primary">{{book.name}}</span> book?</strong></p>
-    <p>All information associated to this user profile will be permanently deleted.
+    <p>All information associated to this profile will be permanently deleted.
     <span class="text-danger">This operation can not be undone.</span>
     </p>
   </div>
