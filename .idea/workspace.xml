@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="Fourth commit. Decorating header.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/assets/images/book.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/assets/images/library.jpg" />
+    <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.css" afterPath="$PROJECT_DIR$/client/src/app/app.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.html" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/authors/authors.component.html" afterPath="$PROJECT_DIR$/client/src/app/authors/authors.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.css" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.html" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/publishers/publishers.component.html" afterPath="$PROJECT_DIR$/client/src/app/publishers/publishers.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -423,14 +415,7 @@
       <workItem from="1584872853025" duration="757000" />
       <workItem from="1584874369145" duration="626000" />
       <workItem from="1585602015610" duration="614000" />
-      <workItem from="1585674121617" duration="701000" />
-    </task>
-    <task id="LOCAL-00033" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
-      <created>1579562884346</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1579562884346</updated>
+      <workItem from="1585674121617" duration="783000" />
     </task>
     <task id="LOCAL-00034" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
       <created>1579573019434</created>
@@ -768,11 +753,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584873591265</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Fourth commit. Decorating header.">
+      <created>1585687494145</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1585687494145</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205274000" />
+    <option name="totallyTimeSpent" value="205356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
