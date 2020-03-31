@@ -1,17 +1,17 @@
 
 <div class="container-fluid">
-  <h1>Books</h1>
-  
-         
-     <form class="example-form table-bordered form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="searchBook()">
-       
+  <h1>Books</h1>  
+            <form class="example-form table-bordered form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="searchBook()">
+       <div class="row">
+        <div class="col col-lg-3">
       <mat-slide-toggle 
         [formControl]="findByPlace" (change)="checkingSearch()" class="m-3 p-3 mx-auto">
         <div class="m-3 p-3 mx-auto">
         Змінити  критерій  пошуку
       </div>
       </mat-slide-toggle>
-   
+      </div>
+      <div class="col col-lg-3">
        <mat-form-field class="select-width p-1">
         <mat-select [(value)]="searchcreateria.type" [(ngModel)]="searchcreateria.type" placeholder="вибрати розташування"  formControlName="type"
         [disabled]="findByPlace.value === true"
@@ -22,31 +22,38 @@
           </mat-option>
         </mat-select>
        </mat-form-field>
+      </div>
+      <div class="col">
+       <table id="searchTable">
+         <tr>
+          <td>
+         <mat-form-field class="input-width">
          
-
-       <mat-form-field class="input-width">
-          <div class="input-group input-group-lg">
           <input class="form-control mr-sm-2" matInput [(ngModel)]="searchcreateria.searchWord"
            placeholder={{searchType}}
           type="text"
           formControlName="search"
           required>
-          </div>
+       
         </mat-form-field>
+      </td>
+        </tr>
+      
+        <tr>
+          <td>
         <span class="input-group-btn">
       <button class="btn btn-large btn-outline-success my-2 my-sm-0" mat-raised-button type="submit"
       color="accent" [disabled]="!searchcreateria.searchWord" >
        Знайти!
-       
-     </button>
+         </button>
      </span>
-      
-    </form>
-    <div class="m-2 p-2 mx-auto shadow p-3 mb-5 bg-white rounded text-right">
-    <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewBook()">
-        Додати нову книжку
-      </button>
+       <td>
+      </tr>
+     </table>
     </div>
+    </div>
+    </form>
+  
   <div class="btn-group mr-2" role="group" aria-label="First group">
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('А')">А</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Б')">Б</button>
@@ -76,10 +83,10 @@
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Х')">Х</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ц')">Ц</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ч')">Ч</button>
-      <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ш')">Ш</button>
     </div>
       <br>
   <div class="btn-group mr-2" role="group" aria-label="First group">
+       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ш')">Ш</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Щ')">Щ</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Ю')">Ю</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Я')">Я</button>
@@ -113,10 +120,16 @@
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Y')">Y</button>
       <button type="button" class="btn btn-secondary"(click)="findByCharacter('Z')">Z</button>
     </div>
-  <div class="row-fluid">
+  
      
 <div class="alert alert-dark" role="alert"><p>По вашому запиту знайдено <strong>{{books.length}}</strong> книжок</p></div>
-     
+ 
+<div class="row-fluid">
+  <div class="m-2 p-2 mx-auto shadow p-3 mb-5 bg-white rounded text-right">
+    <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewBook()">
+        Додати нову книжку
+      </button>
+    </div>
 <div class="col-lg-4 shadow-lg p-3 mb-5 bg-white rounded" >  
  
   <mat-card>
@@ -158,57 +171,53 @@
  <div class="col-lg-8 shadow-lg p-3 mb-5 bg-white rounded" >
       <mat-card>
     <mat-grid-list cols="2" >
-        <mat-grid-tile *ngFor="let book of returnedBooks" class="book" >
-                    <div class="w-90 p-3 h-90 d-inline-block mx-auto book" >
-                         
-                           <table class="table-bordered" >
-                <thead>
-                    <tr>
-                      <th colspan="2" scope="col"><h6>
-                          <a class="list-group-item" routerLink="/books/{{book.id}}">
-                            <strong>{{book.name}}</strong>
-                        </a>
-                      </h6></th>
-                      </tr>
-                  </thead>
-                <tbody>
-               <tr class="text-center">
-            <th rowspan="3" scope="row">
-                <div class="text-center">
-              <img src="data:image/JPEG;base64,{{book.image}}" class="rounded img-thumbnail" style="height: 180px; width:150px;">
-            </div>
+        <mat-grid-tile *ngFor="let book of returnedBooks" class="book" >                  
+          <table class="table-bordered" >
+            <thead>
+                <tr>
+                  <th colspan="2" scope="col"><h6>
+                      <a class="list-group-item" routerLink="/books/{{book.id}}">
+                        <strong>{{book.name}}</strong>
+                    </a>
+                  </h6></th>
+                  </tr>
+              </thead>
+            <tbody>
+           <tr class="text-center">
+        <th rowspan="3" scope="row">
+            <div class="text-center">
+          <img src="data:image/JPEG;base64,{{book.image}}" class="rounded img-thumbnail" style="height: 150px; width:120px;">
+        </div>
+        </th>
+      
+        <th scope="col">    
+            ISBN: <h6>{{book.isbn}}</h6>
+          </th>
+        </tr>
+          <tr>
+           <th scope="col">    
+             Рік випуску: {{book.publishYear}}
             </th>
-          
-            <th scope="col">    
-                ISBN: <h6>{{book.isbn}}</h6>
-              </th>
-            </tr>
-              <tr>
-               <th scope="col">    
-                 Рік випуску: {{book.publishYear}}
-                </th>
-            </tr>  
-            <tr>
-              <th scope="col">    
-                Сторінок: {{book.pageCount}}
-               </th>
-           </tr> 
-            <tr>
-                <th scope="col">    
-                    <button type="button" class="btn btn-primary btn-sm" (click)="editBook(book.id)">
-                        Редагувати книжку
-                      </button> 
-                 </th>
-                 <th scope="col">    
-                    <button type="button" class="btn btn-primary btn-sm" (click)="open(book)">
-                        Видалити книжку
-                      </button> 
-                 </th>
-             </tr>
-                </tbody> 
-                </table>
-               
-                     </div>
+        </tr>  
+        <tr>
+          <th scope="col">    
+            Сторінок: {{book.pageCount}}
+           </th>
+       </tr> 
+        <tr>
+            <th scope="col" class="p-3">    
+                <button type="button" class="btn btn-primary btn-sm" (click)="editBook(book.id)">
+                    Edit book
+                  </button> 
+             </th>
+             <th scope="col" class="p-3">    
+                <button type="button" class="btn btn-primary btn-sm" (click)="open(book)">
+                    Delete book
+                  </button> 
+             </th>
+         </tr>
+            </tbody> 
+            </table> 
                        </mat-grid-tile>
       </mat-grid-list>
       <div class="m-2 p-2 mx-auto">
