@@ -131,9 +131,6 @@ a {
   text-align: left;
 }
 
-.input-width {
-width: 50%;
-}
 
 .findbutton-width {
 width: 13%;
@@ -200,6 +197,7 @@ form div mat-form-field {
 }
 
 form div input {
+  background-color: rgb(252, 252, 252);
   height: 50px;
   width: 100%;
 }
