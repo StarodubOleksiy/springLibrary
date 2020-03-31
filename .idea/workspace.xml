@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="Fourth commit. Decorating header.">
+    <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.css" afterPath="$PROJECT_DIR$/client/src/app/books/books.component.css" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -418,14 +417,7 @@
       <workItem from="1585602015610" duration="614000" />
       <workItem from="1585674121617" duration="806000" />
       <workItem from="1585688260327" duration="273000" />
-      <workItem from="1585688691065" duration="488000" />
-    </task>
-    <task id="LOCAL-00035" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
-      <created>1579573037889</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1579573037889</updated>
+      <workItem from="1585688691065" duration="513000" />
     </task>
     <task id="LOCAL-00036" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
       <created>1579573057440</created>
@@ -763,11 +755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585687568498</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Fourth commit. Decorating header.">
+      <created>1585689188402</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1585689188402</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206140000" />
+    <option name="totallyTimeSpent" value="206165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
