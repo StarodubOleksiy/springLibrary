@@ -127,6 +127,10 @@ mat-grid-tile {
   padding: 1px;
 }
 
+.book table th{
+  text-align: center;
+}
+
 a {
   text-decoration: none;
   text-align: left;
