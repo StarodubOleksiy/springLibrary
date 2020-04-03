@@ -421,14 +421,7 @@
       <workItem from="1585688691065" duration="1170000" />
       <workItem from="1585843991462" duration="624000" />
       <workItem from="1585853577232" duration="643000" />
-      <workItem from="1585935574547" duration="3991000" />
-    </task>
-    <task id="LOCAL-00044" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
-      <created>1579577368662</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1579577368662</updated>
+      <workItem from="1585935574547" duration="4017000" />
     </task>
     <task id="LOCAL-00045" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
       <created>1579577392685</created>
@@ -766,11 +759,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585944384137</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Fourth commit. Decorating header and grid.">
+      <created>1585945441029</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1585945441029</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212080000" />
+    <option name="totallyTimeSpent" value="212106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
