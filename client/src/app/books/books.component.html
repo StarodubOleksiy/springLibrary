@@ -3,16 +3,16 @@
   <h1><mark><strong>Books</strong></mark></h1>  
             <form class="example-form table-bordered form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="searchBook()">
        <div class="row">
-        <div class="col col-lg-3">
+        <div class="col col-lg-3 p-3">
       <mat-slide-toggle 
         [formControl]="findByPlace" (change)="checkingSearch()" class="m-3 p-3 mx-auto">
-        <div class="m-3 p-3 mx-auto">
-        Змінити  критерій  пошуку
+        <div class="m-3 mx-auto">
+        Змінити <br> критерій <br> пошуку
       </div>
       </mat-slide-toggle>
       </div>
       <div class="col col-lg-3">
-       <mat-form-field class="select-width p-1">
+       <mat-form-field class="align-middle select-width m-3 p-1">
         <mat-select [(value)]="searchcreateria.type" [(ngModel)]="searchcreateria.type" placeholder="вибрати розташування"  formControlName="type"
         [disabled]="findByPlace.value === true"
          >
@@ -185,7 +185,7 @@
            <tr class="text-center">
         <th rowspan="3" scope="row">
             <div class="text-center">
-          <img src="data:image/JPEG;base64,{{book.image}}" class="rounded img-thumbnail" style="height: 100px; width:90px;">
+          <img src="data:image/JPEG;base64,{{book.image}}" class="m-1 rounded img-thumbnail" style="height: 100px; width:90px;">
         </div>
         </th>
       

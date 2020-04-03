@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 @Data
-public class BookResponse {
+public class BookResponse implements Comparable<BookResponse> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BookResponse.class);
     private Long id;
@@ -179,5 +179,11 @@ public class BookResponse {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public int compareTo(BookResponse o) {
+        int result = this.name.compareTo(o.name);
+            return result;
     }
 }

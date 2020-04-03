@@ -6,7 +6,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class GenreResponse {
+public class GenreResponse implements Comparable<GenreResponse> {
     private Long id;
     private String name;
 
@@ -24,6 +24,12 @@ public class GenreResponse {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public int compareTo(GenreResponse o) {
+        int result = this.name.compareTo(o.name);
+         return result;
     }
 
 }
