@@ -86,4 +86,10 @@ mat-panel-description {
     /*height: 25px;*/
 }
 
+form input {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  height: 50px;
+}
+
   

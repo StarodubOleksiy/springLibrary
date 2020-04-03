@@ -202,7 +202,7 @@ form div mat-form-field {
 }
 
 form div input {
-  background-color: rgb(252, 252, 252);
+  background-color: rgb(255, 255, 255);
   height: 50px;
   width: 100%;
 }
