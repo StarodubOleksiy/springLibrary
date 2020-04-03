@@ -132,7 +132,7 @@ mat-grid-tile {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   text-align: left;
 }
 
