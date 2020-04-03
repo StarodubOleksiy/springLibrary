@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/model/response/BookResponse.class" afterPath="$PROJECT_DIR$/server/target/classes/springLibrary/model/response/BookResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/model/response/GenreResponse.class" afterPath="$PROJECT_DIR$/server/target/classes/springLibrary/model/response/GenreResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/model/response/PublisherResponse.class" afterPath="$PROJECT_DIR$/server/target/classes/springLibrary/model/response/PublisherResponse.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/book-detail/book-detail.component.html" afterPath="$PROJECT_DIR$/client/src/app/book-detail/book-detail.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -559,14 +563,7 @@
       <workItem from="1585688691065" duration="1170000" />
       <workItem from="1585843991462" duration="624000" />
       <workItem from="1585853577232" duration="643000" />
-      <workItem from="1585935574547" duration="5804000" />
-    </task>
-    <task id="LOCAL-00047" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
-      <created>1579578302038</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1579578302038</updated>
+      <workItem from="1585935574547" duration="6415000" />
     </task>
     <task id="LOCAL-00048" summary="Twelve commit . Design pages. Make them better Edit user interface for book details.">
       <created>1579578322691</created>
@@ -904,11 +901,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585948959990</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Fourth commit. Decorating header and grid.">
+      <created>1585948979838</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1585948979838</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213893000" />
+    <option name="totallyTimeSpent" value="214504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
