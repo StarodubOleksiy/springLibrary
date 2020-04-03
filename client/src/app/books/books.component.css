@@ -73,6 +73,7 @@ mat-grid-tile {
   padding: 0;
   width: 15em;
 }
+
 .books li {
   cursor: pointer;
   position: relative;
@@ -114,7 +115,7 @@ mat-grid-tile {
 
 
 .book {
-  border: 1px solid #eeeaea;
+  border: 1px solid #f1eded;
   margin: 1px;
   padding: 1px;
 }

@@ -37,8 +37,7 @@
        
         </mat-form-field>
       </td>
-        </tr>
-      
+        </tr>      
         <tr>
           <td>
         <span class="input-group-btn">
@@ -175,7 +174,7 @@
           <table class="table-bordered" >
             <thead>
                 <tr>
-                  <th colspan="2" scope="col"><h6>
+                  <th colspan="2" scope="col"><h6 class="p-1">
                       <a class="list-group-item" routerLink="/books/{{book.id}}">
                         <strong>{{book.name}}</strong>
                     </a>
@@ -186,7 +185,7 @@
            <tr class="text-center">
         <th rowspan="3" scope="row">
             <div class="text-center">
-          <img src="data:image/JPEG;base64,{{book.image}}" class="rounded img-thumbnail" style="height: 150px; width:120px;">
+          <img src="data:image/JPEG;base64,{{book.image}}" class="rounded img-thumbnail" style="height: 100px; width:85px;">
         </div>
         </th>
       
@@ -205,12 +204,12 @@
            </th>
        </tr> 
         <tr>
-            <th scope="col" class="p-3">    
+            <th scope="col" class="p-1">    
                 <button type="button" class="btn btn-primary btn-sm" (click)="editBook(book.id)">
                     Edit book
                   </button> 
              </th>
-             <th scope="col" class="p-3">    
+             <th scope="col" class="p-1">    
                 <button type="button" class="btn btn-primary btn-sm" (click)="open(book)">
                     Delete book
                   </button> 
