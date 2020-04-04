@@ -20,10 +20,7 @@ import springLibrary.service.GenreService;
 import springLibrary.service.PublisherService;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -69,17 +66,19 @@ public class BookController {
 
     @PostMapping("book/findbycriteria")
     public ResponseEntity<List<BookResponse>> findBooks(@RequestBody CriteriaRequest criteriaRequest) {
-        LOGGER.info("criteriaRequest.toString() = "+criteriaRequest.toString());
+        LOGGER.info("criteriaRequest.toString() = " + criteriaRequest.toString());
         if (criteriaRequest.getType() == null)
             return new ResponseEntity<>(bookService.findByTitleResponse(criteriaRequest.getSearchWord()), HttpStatus.OK);
         else
-            return new ResponseEntity<>(bookService.findByPlacingResponse(criteriaRequest.getType(),criteriaRequest.getSearchWord()), HttpStatus.OK);
+            return new ResponseEntity<>(bookService.findByPlacingResponse(criteriaRequest.getType(), criteriaRequest.getSearchWord()), HttpStatus.OK);
     }
 
 
     @GetMapping("getbygenre/{id}")
     public List<BookResponse> findByGenreBooks(@PathVariable Long id) {
-        return bookService.findByGenreResponse(id);
+        List<BookResponse> booksByGenre = bookService.findByGenreResponse(id);
+        Collections.sort(booksByGenre);
+        return booksByGenre;
 
     }
 
@@ -102,7 +101,7 @@ public class BookController {
         book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
         book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
         bookService.saveFromRequest(book, bookRequest);
-        if(bookRequest.getId() != null) {
+        if (bookRequest.getId() != null) {
             if (bookRequest.getAuthorsId().length > 0)
                 for (int i = 0; i < bookRequest.getAuthorsId().length; ++i)
                     bookService.insertRelationshipBetweenBookAndAuthor((long) bookRequest.getAuthorsId()[i], bookRequest.getId());

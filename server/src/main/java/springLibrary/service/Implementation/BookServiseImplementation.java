@@ -100,7 +100,6 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
 
     @Override
     public List<BookResponse> findByGenreResponse(long id) {
-
         return getRepository().findByGenre(id).stream()
                 .map(this::bookToBookResponse)
                 .collect(Collectors.toList());

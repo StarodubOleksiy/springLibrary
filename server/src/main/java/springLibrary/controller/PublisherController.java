@@ -16,6 +16,7 @@ import springLibrary.model.response.PublisherResponse;
 import springLibrary.service.GenreService;
 import springLibrary.service.PublisherService;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -31,7 +32,9 @@ public class PublisherController {
 
         @GetMapping("/booksbypublisher")
     public ResponseEntity<List<PublisherResponse>> publishers() {
-        return new ResponseEntity<>(publisherService.findAllResponse(), HttpStatus.OK);
+            List<PublisherResponse> publishersList = publisherService.findAllResponse();
+            Collections.sort(publishersList);
+        return new ResponseEntity<>(publishersList, HttpStatus.OK);
 
     }
 

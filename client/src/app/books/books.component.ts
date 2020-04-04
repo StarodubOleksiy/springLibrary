@@ -52,9 +52,9 @@ export class BooksComponent implements OnInit {
 checkingSearch() {
   console.log("Fumction on change"+this.findByPlace.value);
   if( this.findByPlace.value === true)
-    this.searchType ="Знайти за допомогою заголовка книги";  
+    this.searchType ="Find using the title of the book";  
   else 
-  this.searchType ="Знайти за допомогою місця розташування книги"; 
+  this.searchType ="Find using book placement"; 
 } ;
   
 
@@ -104,7 +104,7 @@ checkingSearch() {
      }
     this.getGenres();
     this.searchcreateria = new SearchCreateria();
-    this.searchType ="Знайти за допомогою місця розташування книги";
+    this.searchType ="Find using book placement";
     console.log('thisBooks.length = '+this.books.length)
     console.log('this.returnedBooks.length = '+this.returnedBooks.length)       
   }

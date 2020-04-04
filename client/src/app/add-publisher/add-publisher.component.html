@@ -3,10 +3,10 @@
   <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
           <mat-card-header>
               <div *ngIf="configureType.text === 'edit'">
-                  <legend>Відредагувати видавництво</legend>
+                  <legend>Edit publisher</legend>
               </div>
               <div *ngIf="configureType.text === 'add'">
-                  <legend>Додати нове видавництво</legend>
+                  <legend>Add new publisher</legend>
               </div>
           </mat-card-header>
           <mat-card-content>
@@ -31,10 +31,10 @@
   
       <button class="submit-button" mat-raised-button type="submit"
        color="accent" [disabled]="!publisherConfigureForm.valid">                               
-        Click me!
+       Save publisher
               </button>
     </form>
   </mat-card-content>
-  <button (click)="goBack()">Повернутися на попередню сторінку</button>
+  <button (click)="goBack()">Return to previous page</button>
   </mat-card>
   </div>

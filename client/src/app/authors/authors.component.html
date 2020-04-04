@@ -8,7 +8,7 @@
             <div class="input-group input-group-lg">
            
           <input matInput [(ngModel)]="nameOfAuthor"
-          placeholder="Введіть автора"
+          placeholder="Enter author name"
           type="text"
           formControlName="search"
           required>
@@ -18,7 +18,7 @@
           <span class="input-group-btn">
       <button class="findbutton-width btn btn-default btn btn-outline-success my-2 my-sm-0" mat-raised-button type="submit"
       color="accent"  [disabled]="!nameOfAuthor" >
-       Знайти!
+       Search!
        
      </button>
     </span>
@@ -93,14 +93,14 @@
         <button type="button" class="btn btn-secondary"(click)="findByCharacter('Z')">Z</button>
       </div>
      
-      <div class="alert alert-dark" role="alert"><p>По вашому запиту знайдено <strong>{{authors.length}}</strong> авторів</p></div>
+      <div class="alert alert-dark" role="alert"><p>Your request has been found <strong>{{authors.length}}</strong> authors</p></div>
     
       <table class="table table-hover">
         <thead>
         <tr class="text-center">
-            <th scope="col">Прізвище імя і побатькові автора або ініціали</th>
-            <th scope="col">Редагувати автора</th>
-            <th scope="col">Видалити автора</th>
+            <th scope="col">First, Middle and Last Author's Name</th>
+            <th scope="col">Edit Author</th>
+            <th scope="col">Delete author</th>
         </tr>
       </thead>
       <tbody>
@@ -110,13 +110,13 @@
       </th>
       <th scope="row">
       <button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
-        Редагувати автора
+        Edit
       </button> 
     </th>
       <th scope="row">
      
     <button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
-        Видалити автора
+        Delete
       </button> 
     </th>
     </tr>

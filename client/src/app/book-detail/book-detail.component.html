@@ -2,7 +2,7 @@
 <div class="container-fluid">
    
     <div class="row-fluid">
-        <h3>Автори:</h3> 
+        <h3>Authors:</h3> 
             <ul class="nav list-group list-group-horizontal">
                     <li *ngFor="let author of authors" class="list-group-item list-group-item-action" >
                             <a routerLink="/books/author/{{author.id}}" > <h6>{{author.name}} </h6></a>
@@ -28,12 +28,12 @@
     </tr> 
 <tr> 
         <th scope="col">    
-            <a  routerLink="/booksbygenre/{{genre.id}}" class="btn btn-link" >Жанр: {{genre.name}}</a>
+          <h2>Genre: </h2> <a  routerLink="/booksbygenre/{{genre.id}}" class="btn btn-link" > {{genre.name}}</a>
           </th>
         </tr> 
     <tr> 
           <th scope="col">    
-                <a  routerLink="/books/publisher/{{publisher.id}}" class="btn btn-link" >Видавництво: {{publisher.name}}</a>
+            <h2>Publisher: </h2>  <a  routerLink="/books/publisher/{{publisher.id}}" class="btn btn-link" > {{publisher.name}}</a>
               </th>
         
         </tr>
@@ -42,28 +42,28 @@
           </th>
           <tr>
            <th scope="col">    
-              <h2>Рік випуску: {{book.publishYear}}</h2>
+              <h2>Publish year: {{book.publishYear}}</h2>
             </th>
         </tr> 
         <tr>
             <th scope="col">    
-                <h2>Сторінок: {{book.pageCount}}</h2>
+                <h2>Pages: {{book.pageCount}}</h2>
              </th>
             </tr> 
             <tr>
                 <th scope="col">    
-                    <h2>Тип: {{book.type}}</h2>
+                    <h2>Type: {{book.type}}</h2>
                  </th>
                 </tr> 
         <tr>
             <th scope="col">    
-               <h2>Приміщення: {{book.room}}</h2>
+               <h2>Room: {{book.room}}</h2>
              </th>
          </tr>  
        
           <tr>
               <th scope="col">    
-                  <h2>Розміщення: {{book.placing}}</h2>
+                  <h2>Location: {{book.placing}}</h2>
               </th>
           </tr> 
           <tr>
@@ -76,7 +76,7 @@
      
                </tbody> 
             </table>
-<button (click)="goBack()">Повернутися на попередню сторінку</button>
+<button (click)="goBack()">Return on previous page</button>
 </div>
 </div>
 </div>
