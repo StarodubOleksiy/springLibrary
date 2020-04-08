@@ -38,14 +38,14 @@ checkingSearch(): void {
   this.publisherSearchCreateria.findByCity = this.findByCity.value;
   console.log("this.publisherSearchCreateria.findByCity = "+this.publisherSearchCreateria.findByCity);
   if( this.findByCity.value === false)
-     this.searchType ="Знайти за допомогою назви видавництва";  
+     this.searchType ="Find using a name of the publisher";  
    else
-   this.searchType ="Знайти за допомогою міста"; 
+   this.searchType ="Find using a name of the city"; 
   } 
   
   constructor(private publisherService: PublisherService,
               private router: Router,public snackBar: MatSnackBar) { 
-                this.searchType ="Знайти за допомогою міста";  
+                this.searchType ="Find using a name of the city";  
               }
 
   ngOnInit() {
@@ -53,7 +53,7 @@ checkingSearch(): void {
     this.publisherSearchCreateria = new PublisherSearchCreateria();
     this.publisherSearchCreateria.findByCity = true;
     this.getPublishers();
-     this.searchType ="Знайти за допомогою назви видавництва";
+     this.searchType ="Find using a name of the publisher";
 
   }
 

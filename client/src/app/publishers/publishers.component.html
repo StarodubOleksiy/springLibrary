@@ -6,7 +6,7 @@
      <div class="input-group input-group-lg">
                      <mat-slide-toggle 
                       [formControl]="findByCity" (change)="checkingSearch()" class="m-3 p-3 mx-auto">
-                      <div class="m-3 p-3 mx-auto">
+                      <div class="mx-auto">
                         Change <br> search <br> criteria
                     </div>
                     </mat-slide-toggle>
@@ -92,7 +92,7 @@
         <button type="button" class="btn btn-secondary"(click)="findByCharacter('Y')">Y</button>
         <button type="button" class="btn btn-secondary"(click)="findByCharacter('Z')">Z</button>
       </div>
-      <div class="alert alert-dark" role="alert"><p>По вашому запиту знайдено <strong>{{publishers.length}} </strong> видавництв</p></div>
+      <div class="alert alert-dark" role="alert"><p>Your request has been found <strong>{{publishers.length}} </strong> publishers</p></div>
     
       <table class="table table-hover">
       <thead>
@@ -113,13 +113,13 @@
     </th>
     <th scope="row">
       <button type="button" class="btn btn-primary" (click)="editPublisher(publisher.id)">
-        Редагувати видавництво
+        Edit
       </button> 
     </th>
     <th scope="row">
      
     <button type="button" class="btn btn-primary" (click)="onPublisherDeleteClick(publisher)">
-        Видалити видавництво
+        Delete
       </button> 
     </th>
     </tr>                                
