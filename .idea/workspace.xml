@@ -566,14 +566,7 @@
       <workItem from="1585853577232" duration="643000" />
       <workItem from="1585935574547" duration="7878000" />
       <workItem from="1585985195031" duration="3344000" />
-      <workItem from="1586354348915" duration="795000" />
-    </task>
-    <task id="LOCAL-00055" summary="Fourtenth commit. Add pagination to authors page and publishers page.">
-      <created>1579945614548</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1579945614548</updated>
+      <workItem from="1586354348915" duration="931000" />
     </task>
     <task id="LOCAL-00056" summary="Fourtenth commit. Add pagination to authors page and publishers page.">
       <created>1579945633184</created>
@@ -911,11 +904,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586355180293</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Sixth commit. Fixing console error.">
+      <created>1586355203262</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1586355203262</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220106000" />
+    <option name="totallyTimeSpent" value="220242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
