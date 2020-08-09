@@ -25,8 +25,7 @@ public class Book implements java.io.Serializable {
     private String placing;
     private byte[] image;
 
-
-    public Book() {
+      public Book() {
     }
 
     public Book(Long id, Genre genre, Publisher publisher, String name, Integer pageCount, String isbn, Integer publishYear,
@@ -154,7 +153,7 @@ public class Book implements java.io.Serializable {
     public void addAuthor(Author author) {
         if (this.authors == null)
             this.authors = new HashSet<>();
-        authors.add(author);
+            authors.add(author);
     }
 
     @Override

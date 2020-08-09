@@ -94,6 +94,7 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
         response.setPlacing(book.getPlacing());
         response.setType(book.getType());
         response.setAuthorsId(book.getAuthors());
+
         return response;
     }
 
