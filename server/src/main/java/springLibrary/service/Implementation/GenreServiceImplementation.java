@@ -54,7 +54,7 @@ public class GenreServiceImplementation  extends AbstractService<Genre, Long, Ge
         if(genre.getId() == 0)
             super.save(genre);
         else {
-            if (getRepository().getOne(genre.getId()).getBooks() != null) ;
+            if (getRepository().getOne(genre.getId()).getBooks() != null) 
             genre.setBooks(getRepository().getOne(genre.getId()).getBooks());
             super.save(genre);
         }

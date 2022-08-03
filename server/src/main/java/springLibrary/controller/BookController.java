@@ -94,7 +94,7 @@ public class BookController {
         return bookService.findByAuthorResponse(id);
     }
 
-
+    // Todo fix it later https://github.com/oksanamekh/SmartParking/blob/development/server/src/main/java/com/smartparking/service/impl/ClientServiceImpl.java
     @PostMapping("books/save")
     public ResponseEntity<?> save(@RequestBody BookRequest bookRequest) {
         Book book = bookRequest.toBook();
