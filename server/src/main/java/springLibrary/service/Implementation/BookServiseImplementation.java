@@ -167,15 +167,9 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
             book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
         }
         Integer values[] = bookRequest.getAuthorsId();
-        if (book.getId() == null) {
-            for (int i = 0; i < values.length; ++i) {
+            for (int i = 0; i < values.length; ++i)
                 book.addAuthor(authorService.findById((long) values[i]).orElse(null));
-                getRepository().save(book);
-            }
-        } else {
-            this.deleteRelationshipBetweenBooksAndAuthor(book.getId());
             getRepository().save(book);
-        }
     }
 
     @Override

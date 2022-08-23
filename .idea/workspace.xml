@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="Seventh commit. Changing update book method post to put.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/service/Implementation/BookServiseImplementation.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,99 +29,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/BookController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="115" column="54" lean-forward="false" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="insert_into_table_book.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-book/insert_into_table_book.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="70" lean-forward="false" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LiquibaseApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liquibase/src/main/java/com/smartparking/liquibase/LiquibaseApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BookServiseImplementation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+            <state relative-caret-position="251">
+              <caret line="171" column="39" lean-forward="false" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
               <folding>
-                <marker date="1661288156358" expanded="true" signature="5685:5733" ph="delete from " />
-                <marker date="1661288156358" expanded="true" signature="5906:5968" ph="INSERT INTO library.bookauthor... " />
-                <marker date="1661288156358" expanded="true" signature="6098:6146" ph="delete from " />
-                <marker date="1661288156358" expanded="true" signature="6200:6237" ph="delete from " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Book.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="25" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="25" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/BookService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="48" column="67" lean-forward="false" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/BookRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
-              <folding>
-                <element signature="e#2417#2418#0" expanded="true" />
-                <element signature="e#2468#2469#0" expanded="true" />
+                <marker date="1661291057083" expanded="true" signature="5490:5538" ph="delete from " />
+                <marker date="1661291057083" expanded="true" signature="5711:5773" ph="INSERT INTO library.bookauthor... " />
+                <marker date="1661291057083" expanded="true" signature="5903:5951" ph="delete from " />
+                <marker date="1661291057083" expanded="true" signature="6005:6042" ph="delete from " />
               </folding>
             </state>
           </provider>
@@ -195,8 +114,8 @@
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/BookService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/BookRequest.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/BookController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java" />
       </list>
     </option>
   </component>
@@ -706,14 +625,7 @@
       <workItem from="1660308563126" duration="209000" />
       <workItem from="1660667959983" duration="619000" />
       <workItem from="1660829201854" duration="373000" />
-      <workItem from="1661282263605" duration="5932000" />
-    </task>
-    <task id="LOCAL-00061" summary="Fifteenth commit. Decorating publisher page and adding pagination to genres.">
-      <created>1579949634660</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1579949634660</updated>
+      <workItem from="1661282263605" duration="7405000" />
     </task>
     <task id="LOCAL-00062" summary="Fifteenth commit. Decorating publisher page and adding pagination to genres.">
       <created>1579949652454</created>
@@ -1051,11 +963,18 @@
       <option name="project" value="LOCAL" />
       <updated>1661289349720</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Seventh commit. Changing update book method post to put.">
+      <created>1661289577227</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1661289577227</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232557000" />
+    <option name="totallyTimeSpent" value="234030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1442,22 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/BookService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1517,15 +1420,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+        <state relative-caret-position="251">
+          <caret line="171" column="39" lean-forward="false" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
           <folding>
-            <marker date="1661288156358" expanded="true" signature="5685:5733" ph="delete from " />
-            <marker date="1661288156358" expanded="true" signature="5906:5968" ph="INSERT INTO library.bookauthor... " />
-            <marker date="1661288156358" expanded="true" signature="6098:6146" ph="delete from " />
-            <marker date="1661288156358" expanded="true" signature="6200:6237" ph="delete from " />
+            <marker date="1661291057083" expanded="true" signature="5490:5538" ph="delete from " />
+            <marker date="1661291057083" expanded="true" signature="5711:5773" ph="INSERT INTO library.bookauthor... " />
+            <marker date="1661291057083" expanded="true" signature="5903:5951" ph="delete from " />
+            <marker date="1661291057083" expanded="true" signature="6005:6042" ph="delete from " />
           </folding>
         </state>
       </provider>
