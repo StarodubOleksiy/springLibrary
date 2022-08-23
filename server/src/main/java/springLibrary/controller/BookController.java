@@ -101,11 +101,6 @@ public class BookController {
         book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
         book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
         bookService.saveFromRequest(book, bookRequest);
-        if (bookRequest.getId() != null) {
-            if (bookRequest.getAuthorsId().length > 0)
-                for (int i = 0; i < bookRequest.getAuthorsId().length; ++i)
-                    bookService.insertRelationshipBetweenBookAndAuthor((long) bookRequest.getAuthorsId()[i], bookRequest.getId());
-        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
