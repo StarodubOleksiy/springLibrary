@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60b66193-fe2f-404d-8e10-d50f321bec11" name="Default" comment="Seventh commit. Changing update book method post to put.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/service/Implementation/BookServiseImplementation.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/BookServiseImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -625,14 +623,7 @@
       <workItem from="1660308563126" duration="209000" />
       <workItem from="1660667959983" duration="619000" />
       <workItem from="1660829201854" duration="373000" />
-      <workItem from="1661282263605" duration="7405000" />
-    </task>
-    <task id="LOCAL-00062" summary="Fifteenth commit. Decorating publisher page and adding pagination to genres.">
-      <created>1579949652454</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1579949652454</updated>
+      <workItem from="1661282263605" duration="7521000" />
     </task>
     <task id="LOCAL-00063" summary="Fifteenth commit. Decorating publisher page and adding pagination to genres.">
       <created>1579949853767</created>
@@ -970,11 +961,18 @@
       <option name="project" value="LOCAL" />
       <updated>1661289577227</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Seventh commit. Changing update book method post to put.">
+      <created>1661291379975</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1661291379975</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234030000" />
+    <option name="totallyTimeSpent" value="234146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
