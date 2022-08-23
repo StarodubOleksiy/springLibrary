@@ -148,9 +148,9 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
 
     @Override
     public List<BookResponse> findByPlacingResponse(String room, String placing) {
-            return getRepository().findByPlacing(Room.stringToEnum(room), placing).stream()
-                    .map(this::bookToBookResponse)
-                    .collect(Collectors.toList());
+        return getRepository().findByPlacing(Room.stringToEnum(room), placing).stream()
+                .map(this::bookToBookResponse)
+                .collect(Collectors.toList());
     }
 
 
@@ -194,6 +194,29 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
     public void deleteBook(BookRequest bookRequest) {
         jdbcTemplate.update("delete  from library.bookauthor where bookid = ?", bookRequest.getId());
         jdbcTemplate.update("delete from library.book where id = ?", bookRequest.getId());
+    }
+
+    @Override
+    @Transactional
+    public void updateFromRequest(Long id, BookRequest bookRequest) {
+        Book book = findById(id).orElse(null);
+        book.setName(bookRequest.getName());
+        book.setGenre(genreService.getOne(bookRequest.getGenreId()));
+        this.deleteRelationshipBetweenBooksAndAuthor(book.getId());
+        for(int authorId: bookRequest.getAuthorsId())
+            book.addAuthor(authorService.getOne(Long.valueOf(authorId)));
+        book.setPublisher(publisherService.getOne(bookRequest.getPublisherId()));
+        book.setIsbn(bookRequest.getIsbn());
+        book.setDescr(bookRequest.getDescr());
+        if (bookRequest.getImage() != null) {
+            book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
+        }
+        book.setPageCount(bookRequest.getPageCount());
+        book.setPublishYear(book.getPublishYear());
+        book.setRoom(bookRequest.getRoom());
+        book.setType(bookRequest.getType());
+        book.setPlacing(bookRequest.getPlacing());
+        getRepository().save(book);
     }
 
 

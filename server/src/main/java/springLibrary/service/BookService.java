@@ -46,5 +46,7 @@ public interface BookService  extends Service<Book, Long, BookRepository> {
 
    public List<BookResponse> findByPlacingResponse(String room, String placing);
 
+   public void updateFromRequest(Long id, BookRequest bookRequest);
+
 
 }

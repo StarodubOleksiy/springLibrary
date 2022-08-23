@@ -34,6 +34,12 @@ export class BookService {
       this.booksUrl + '/books/save', book, {observe: 'response'});
   }
 
+  updateBook(book: Book): Observable<HttpResponse<any>> {
+    return this.http.put<HttpResponse<any>>(
+        this.booksUrl + '/books/update/'+book.id, book, {observe: 'response'});
+  } 
+  
+
 
   getBook(id: number): Observable<Book> {
     console.log('is this function working?');

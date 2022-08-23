@@ -109,6 +109,14 @@ public class BookController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PutMapping("/books/update/{id}")
+    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody BookRequest bookRequest) {
+        LOGGER.info("book id = " + id);
+        LOGGER.info("bookRequest = " + bookRequest);
+        bookService.updateFromRequest(id,bookRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
     @PostMapping("/book/delete")
     public ResponseEntity<?> delete(@RequestBody BookRequest bookRequest) {

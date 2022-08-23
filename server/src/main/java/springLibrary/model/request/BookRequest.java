@@ -25,6 +25,77 @@ public class BookRequest {
     private String type;
     private Integer[] authorsId;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public Integer getPublishYear() {
+        return publishYear;
+    }
+
+    public void setPublishYear(Integer publishYear) {
+        this.publishYear = publishYear;
+    }
+
+    public String getDescr() {
+        return descr;
+    }
+
+    public void setDescr(String descr) {
+        this.descr = descr;
+    }
+
+    public void setGenreId(long genreId) {
+        this.genreId = genreId;
+    }
+
+    public void setPublisherId(long publisherId) {
+        this.publisherId = publisherId;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public Integer getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(Integer pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public String getPlacing() {
+        return placing;
+    }
+
+    public void setPlacing(String placing) {
+        this.placing = placing;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setAuthorsId(Integer[] authorsId) {
+        this.authorsId = authorsId;
+    }
 
     public Long getId() {
         return id;
@@ -50,12 +121,12 @@ public class BookRequest {
         return authorsId;
     }
 
-    private Room getRoom() {
+    public Room getRoom() {
         return Room.stringToEnum(this.room);
     }
 
 
-    private Type getType() {
+    public Type getType() {
         return Type.StringToEnum(this.type);
 
     }
