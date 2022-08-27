@@ -254,8 +254,6 @@ public onGenreDeleteClick(genre: Genre): void {
     console.log("stringBuilder.toString() (array of objects) : ["+stringBuilder.toString()+"}]");
     })
  
-   
-  //})
   var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей жанр?');
   if (deleteConfirmation)  
   this.genreService.deleteGenre(genre)

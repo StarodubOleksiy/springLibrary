@@ -9,13 +9,15 @@ import {environment} from '../environments/environment';
 import { SearchCreateria } from './SearchCreateria';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 
 @Injectable()
 export class BookService {
+
+httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  
 
 
   books: Book[]
@@ -33,6 +35,7 @@ export class BookService {
   return this.http.post<HttpResponse<any>>(
       this.booksUrl + '/books/save', book, {observe: 'response'});
   }
+
 
   updateBook(book: Book): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
@@ -89,6 +92,14 @@ getBooksByCriteria(criteria: SearchCreateria): Observable<HttpResponse<Book[] | 
         this.booksUrl + '/book/delete', book, {observe: 'response'});
 }
 
+deleteBookNewVersion(book: Book): Observable<Book> {
+  const url = `${this.booksUrl + '/book/delete'}/${book.id}`;
+  return this.http.delete<Book>(url, this.httpOptions).pipe(
+    tap(_ => console.log(`deleted book id=${book.id}`)),
+    catchError(this.handleError<Book>('delete Book'))
+  );
+}
+
 
 getGenres(): Observable<HttpResponse<Genre[] | any>> {
   return this.http.get<HttpResponse<Genre[] | any>>(
@@ -112,12 +123,19 @@ getBookByCharacter(character: string): Observable<Book[]> {
 }
 
 
+private handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
 
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
 
+    // TODO: better job of transforming error for user consumption
+    console.log(`${operation} failed: ${error.message}`);
 
-
- 
-
+    // Let the app keep running by returning an empty result.
+    return Observable.of(result as T);
+  };
+}
 
 
 }

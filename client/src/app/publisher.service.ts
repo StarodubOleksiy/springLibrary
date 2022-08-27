@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Publisher } from './model/publisher';
 import {Observable} from 'rxjs/Observable';
-import { HttpClient,  HttpResponse} from '@angular/common/http';
+import { HttpClient,  HttpResponse, HttpHeaders} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import { PublisherSearchCreateria } from './PublisherSearchCriteria';
-import  "rxjs/add/operator/map" ;
-import 'rxjs/add/operator/catch';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class PublisherService {
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+
   
   private publisherUrl = environment.apiUrl;   // URL to web api
-  //private booksUrl = '/books';
-  //private booksUrl = environment.apiUrl; 
+
    constructor(private http: HttpClient,
    ) { }
  
@@ -49,6 +52,23 @@ export class PublisherService {
      this.publisherUrl + '/publisher/delete', publisher, {observe: 'response'});
  }
 
+ deletePublisherNewVersion(publisher: Publisher): Observable<Publisher> {
+  const url = `${this.publisherUrl + '/publisher/delete'}/${publisher.id}`;
+  return this.http.delete<Publisher>(url, this.httpOptions)
+  .pipe(
+    tap(_ => console.log(`deleted publisher id=${publisher.id}`)),
+    catchError(this.handleError<Publisher>('delete Publisher'))
+  );
+}
+
+
+updatePublisher(publisher: Publisher): Observable<any> {
+  return this.http.put(this.publisherUrl+'update/' + publisher.id, publisher, this.httpOptions)
+  .pipe(
+    tap(_ => console.log(`updated publisher id=${publisher.id}`)),
+    catchError(this.handleError<any>('update Publisher'))
+  );
+}
 
 
  getPublishersByCriteria(publisherSearchCreateria: PublisherSearchCreateria): Observable<HttpResponse<Publisher[] | any>> {
@@ -66,5 +86,20 @@ getPublishersByCharacter(character: string): Observable<Publisher[]> {
                   }
       });
 }
+
+private handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
+
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
+
+    // TODO: better job of transforming error for user consumption
+    console.log(`${operation} failed: ${error.message}`);
+
+    // Let the app keep running by returning an empty result.
+    return Observable.of(result as T);
+  };
+}
+
 
 }
