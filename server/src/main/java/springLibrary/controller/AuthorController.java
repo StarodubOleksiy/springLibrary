@@ -73,5 +73,12 @@ public class AuthorController {
     }
 
 
+    @PutMapping("/authors/update/{id}")
+    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody AuthorRequest authorRequest) {
+        LOGGER.info("author id = " + id);
+        LOGGER.info("bookRequest = " + authorRequest);
+        authorService.updateFromRequest(id,authorRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }

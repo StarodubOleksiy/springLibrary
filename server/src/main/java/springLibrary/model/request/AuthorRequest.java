@@ -1,6 +1,8 @@
 package springLibrary.model.request;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import springLibrary.entities.Author;
 import springLibrary.entities.Genre;
 
@@ -26,6 +28,10 @@ public class AuthorRequest {
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

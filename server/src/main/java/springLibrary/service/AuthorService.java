@@ -29,4 +29,6 @@ public interface AuthorService  extends Service<Author, Long, AuthorRepository> 
 
     public List<AuthorResponse> findByBookResponse(long id);
 
+    public void updateFromRequest(Long id, AuthorRequest authorRequest);
+
 }

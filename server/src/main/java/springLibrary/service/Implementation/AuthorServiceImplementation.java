@@ -68,19 +68,8 @@ public class AuthorServiceImplementation extends AbstractService<Author, Long, A
     @Transactional
     public void saveFromRequest(AuthorRequest authorRequest) {
         Author author = authorRequest.toAuthor();
-        if (author.getBooks() == null) {
-            author.createBooks();
-        }
-        if (authorRequest.getBooksId() != null) {
-            if (authorRequest.getBooksId().length > 0) {
-                this.deleteRelationshipBetweenBooksAndAuthor(authorRequest.getId());
-                getRepository().save(author);
-                for (int i = 0; i < authorRequest.getBooksId().length; ++i)
-                    insertRelationshipBetweenBookAndAuthor(author.getId(), authorRequest.getBooksId()[i]);
-            } else
-                getRepository().save(author);
-        } else
-            getRepository().save(author);
+        author.createBooks();
+        getRepository().save(author);
     }
 
 
@@ -117,6 +106,14 @@ public class AuthorServiceImplementation extends AbstractService<Author, Long, A
                         of(getRepository().findById(authorId).get())));
         Collections.sort(authorsByBook);
         return authorsByBook;
+    }
+
+    @Override
+    @Transactional
+    public void updateFromRequest(Long id, AuthorRequest authorRequest) {
+        Author author = findById(id).orElse(null);
+        author.setFio(authorRequest.getName());
+        getRepository().save(author);
     }
 
 

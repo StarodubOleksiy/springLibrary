@@ -19,10 +19,7 @@ import springLibrary.service.*;
 
 import javax.transaction.Transactional;
 
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -167,9 +164,9 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
             book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
         }
         Integer values[] = bookRequest.getAuthorsId();
-            for (int i = 0; i < values.length; ++i)
-                book.addAuthor(authorService.findById((long) values[i]).orElse(null));
-            getRepository().save(book);
+        for (int i = 0; i < values.length; ++i)
+            book.addAuthor(authorService.findById((long) values[i]).orElse(null));
+        getRepository().save(book);
     }
 
     @Override
@@ -197,8 +194,12 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
         book.setName(bookRequest.getName());
         book.setGenre(genreService.getOne(bookRequest.getGenreId()));
         this.deleteRelationshipBetweenBooksAndAuthor(book.getId());
-        for(int authorId: bookRequest.getAuthorsId())
-            book.addAuthor(authorService.getOne(Long.valueOf(authorId)));
+        Set<Author> authors = new HashSet<>();
+        for (int authorId : bookRequest.getAuthorsId()) {
+            LOGGER.info("!!!!!=====*****-----+++++/////bookRequest.getAuthorsId()!!!!!=====*****-----+++++///// = " + authorId);
+            authors.add(authorService.getOne(Long.valueOf(authorId)));
+        }
+        book.setAuthors(authors);
         book.setPublisher(publisherService.getOne(bookRequest.getPublisherId()));
         book.setIsbn(bookRequest.getIsbn());
         book.setDescr(bookRequest.getDescr());

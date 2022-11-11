@@ -65,32 +65,39 @@ export class AddAuthorComponent implements OnInit {
 }
 
 
-  saveAuthor(): void {
-      if (this.configureType.type === SaveAuthorConfigureType.EDIT)
-    this.author.id = this.loadedAuthor.id;
+
+
+saveAuthor(): void {
+  if (this.configureType.type === SaveAuthorConfigureType.ADD) {
     this.authorServise.saveAuthor(this.author).subscribe((response: HttpResponse<any>) => {
-      if (this.configureType.type === SaveAuthorConfigureType.ADD) {
-        this.snackBar.open('Новий aвтор успішно доданий.', null, {
-            duration: 2000
-        });
-      if(isNaN(this.bookId))
-      this.router.navigate(['/savebook/add']);
-       else
-       this.router.navigate(['/savebook/edit/'+this.bookId]);
-    } else {
-        this.snackBar.open('Автор успішно відредагований.', null, {
-            duration: 2000
-        });
-        this.router.navigate(['authors']);
-    }
-     
-    }, error => {
-        this.snackBar.open('Author  with the such name is already exists in database .'
-            , null, {
-                duration: 2000
-            });
+      this.snackBar.open('Новий aвтор успішно доданий.', null, {
+        duration: 2000
     });
-};
+    this.router.navigate(['/savebook/add']);
+  }, error => {
+    this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+        , null, {
+            duration: 2000
+        });
+      }); 
+
+} else
+{
+  this.authorServise.updateAuthor(this.author).subscribe((response: HttpResponse<any>) => {
+    this.snackBar.open('Автор успішно відредагований.', null, {
+      duration: 2000
+  });
+  this.router.navigate(['authors']);
+}, error => {
+  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+      , null, {
+          duration: 2000
+      });
+    });
+}
+}
+
+
 
 
 goBack(): void {

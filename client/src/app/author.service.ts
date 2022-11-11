@@ -58,13 +58,10 @@ export class AuthorService {
    }
 
 
-   updateAuthor(author: Author): Observable<any> {
-    return this.http.put(this.authorUrl+'update/' + author.id, author, this.httpOptions)
-    .pipe(
-      tap(_ => console.log(`updated author id=${author.id}`)),
-      catchError(this.handleError<any>('update Author'))
-    );
-  }
+   updateAuthor(author: Author): Observable<HttpResponse<any>> {
+    return this.http.put<HttpResponse<any>>(
+        this.authorUrl + '/authors/update/'+author.id, author, {observe: 'response'});
+  } 
    
 
     getAuthorsByName(name: string): Observable<Author[]> {
