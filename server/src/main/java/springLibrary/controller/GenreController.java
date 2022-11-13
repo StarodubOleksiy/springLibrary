@@ -46,7 +46,7 @@ public class GenreController {
 
     @GetMapping("genre/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
-               return genreService.findByIdResponse(id)
+        return genreService.findByIdResponse(id)
                 .map(genre -> new ResponseEntity<Object>(genre, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect genre id", HttpStatus.BAD_REQUEST));
     }
@@ -55,17 +55,17 @@ public class GenreController {
     @PostMapping("/genre/delete")
     public ResponseEntity<?> delete(@RequestBody GenreRequest genreRequest) {
         Genre genre = genreRequest.toGenre();
-            genreService.delete(genre);
-             return new ResponseEntity<>(HttpStatus.OK);
+        genreService.delete(genre);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
 
     @PutMapping("/genres/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody GenreRequest genreRequest) {
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody GenreRequest genreRequest) {
         LOGGER.info("author id = " + id);
         LOGGER.info("bookRequest = " + genreRequest);
-        genreService.updateFromRequest(id,genreRequest);
+        genreService.updateFromRequest(id, genreRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
