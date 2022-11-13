@@ -55,13 +55,11 @@ deleteGenreNewVersion(genre: Genre): Observable<Genre> {
 }
 
 
-updateGenre(genre: Genre): Observable<any> {
-  return this.http.put(this.genreUrl+'update/' + genre.id, genre, this.httpOptions)
-  .pipe(
-    tap(_ => console.log(`updated genre id=${genre.id}`)),
-    catchError(this.handleError<any>('updateGenre'))
-  );
-}
+updateGenre(genre: Genre): Observable<HttpResponse<any>> {
+  return this.http.put<HttpResponse<any>>(
+      this.genreUrl + '/genres/update/'+genre.id, genre, {observe: 'response'});
+} 
+ 
 
 
 private handleError<T>(operation = 'operation', result?: T) {

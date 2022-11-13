@@ -62,13 +62,11 @@ export class PublisherService {
 }
 
 
-updatePublisher(publisher: Publisher): Observable<any> {
-  return this.http.put(this.publisherUrl+'update/' + publisher.id, publisher, this.httpOptions)
-  .pipe(
-    tap(_ => console.log(`updated publisher id=${publisher.id}`)),
-    catchError(this.handleError<any>('update Publisher'))
-  );
-}
+updatePublisher(publisher: Publisher): Observable<HttpResponse<any>> {
+  return this.http.put<HttpResponse<any>>(
+      this.publisherUrl + '/publishers/update/'+publisher.id, publisher, {observe: 'response'});
+} 
+ 
 
 
  getPublishersByCriteria(publisherSearchCreateria: PublisherSearchCreateria): Observable<HttpResponse<Publisher[] | any>> {

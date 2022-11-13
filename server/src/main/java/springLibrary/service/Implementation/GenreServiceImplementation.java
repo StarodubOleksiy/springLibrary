@@ -4,21 +4,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springLibrary.entities.Author;
 import springLibrary.entities.Book;
 import springLibrary.entities.Genre;
+import springLibrary.model.request.AuthorRequest;
+import springLibrary.model.request.GenreRequest;
 import springLibrary.model.response.BookResponse;
 import springLibrary.model.response.GenreResponse;
 import springLibrary.repository.GenreRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.GenreService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class GenreServiceImplementation  extends AbstractService<Genre, Long, GenreRepository> implements GenreService {
+public class GenreServiceImplementation extends AbstractService<Genre, Long, GenreRepository> implements GenreService {
 
 
     protected GenreServiceImplementation(@Autowired GenreRepository repository) {
@@ -44,21 +48,22 @@ public class GenreServiceImplementation  extends AbstractService<Genre, Long, Ge
     }
 
 
-
     @Override
     public Optional<GenreResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::genreToGenreResponse);
     }
 
     public void save(Genre genre) {
-        if(genre.getId() == 0)
-            super.save(genre);
-        else {
-            if (getRepository().getOne(genre.getId()).getBooks() != null) 
-            genre.setBooks(getRepository().getOne(genre.getId()).getBooks());
-            super.save(genre);
-        }
+        super.save(genre);
+    }
 
+
+    @Override
+    @Transactional
+    public void updateFromRequest(Long id, GenreRequest genreRequest) {
+        Genre genre = findById(id).orElse(null);
+        genre.setName(genreRequest.getName());
+        getRepository().save(genre);
     }
 
 

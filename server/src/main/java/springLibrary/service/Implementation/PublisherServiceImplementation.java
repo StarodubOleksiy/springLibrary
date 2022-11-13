@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import springLibrary.entities.Book;
 import springLibrary.entities.Genre;
 import springLibrary.entities.Publisher;
+import springLibrary.model.request.GenreRequest;
+import springLibrary.model.request.PublisherRequest;
 import springLibrary.model.response.AuthorResponse;
 import springLibrary.model.response.BookResponse;
 import springLibrary.model.response.GenreResponse;
@@ -15,6 +17,7 @@ import springLibrary.repository.PublisherRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.PublisherService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -54,14 +57,7 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
 
 
     public void save(Publisher publisher) {
-        if(publisher.getId() == 0)
             super.save(publisher);
-        else {
-            if (getRepository().getOne(publisher.getId()).getBooks() != null) ;
-            publisher.setBooks(getRepository().getOne(publisher.getId()).getBooks());
-            super.save(publisher);
-        }
-
     }
 
     @Override
@@ -96,5 +92,13 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
                 .collect(Collectors.toList());
     }
 
+    @Override
+    @Transactional
+    public void updateFromRequest(Long id, PublisherRequest publisherRequest) {
+        Publisher publisher = findById(id).orElse(null);
+        publisher.setName(publisherRequest.getName());
+        publisher.setCity(publisherRequest.getCity());
+        getRepository().save(publisher);
+    }
 
 }

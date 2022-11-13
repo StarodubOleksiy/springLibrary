@@ -3,6 +3,8 @@ package springLibrary.service;
 import springLibrary.entities.Book;
 import springLibrary.entities.Genre;
 import springLibrary.entities.Publisher;
+import springLibrary.model.request.GenreRequest;
+import springLibrary.model.request.PublisherRequest;
 import springLibrary.model.response.AuthorResponse;
 import springLibrary.model.response.BookResponse;
 import springLibrary.model.response.GenreResponse;
@@ -29,5 +31,7 @@ public interface PublisherService extends Service<Publisher, Long, PublisherRepo
     public List<PublisherResponse> findByCityResponse(String city);
 
     public List<PublisherResponse> findByCharacterResponse(String character);
+
+    public void updateFromRequest(Long id, PublisherRequest publisherRequest);
 
 }

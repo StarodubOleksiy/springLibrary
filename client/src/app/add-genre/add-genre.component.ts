@@ -68,32 +68,35 @@ export class AddGenreComponent implements OnInit {
 }
 
 
-  saveGenre(): void {
-      if (this.configureType.type === SaveGenreConfigureType.EDIT)
-    this.genre.id = this.loadedGenre.id;
+saveGenre(): void {
+  if (this.configureType.type === SaveGenreConfigureType.ADD) {
     this.genreServise.saveGenre(this.genre).subscribe((response: HttpResponse<any>) => {
-      if (this.configureType.type === SaveGenreConfigureType.ADD) {
-        this.snackBar.open('Новий жанр успішно доданий.', null, {
-            duration: 2000
-        });
-      if(isNaN(this.bookId))
-      this.router.navigate(['/savebook/add']);
-       else
-       this.router.navigate(['/savebook/edit/'+this.bookId]);
-    } else {
-        this.snackBar.open('Жанр успішно відредагований.', null, {
-            duration: 2000
-        });
-        this.router.navigate(['books']);
-    }
-     
-    }, error => {
-        this.snackBar.open('Genre  with the such name is already exists in database .'
-            , null, {
-                duration: 2000
-            });
+      this.snackBar.open('Новий жанр успішно доданий.', null, {
+        duration: 2000
     });
-};
+    this.router.navigate(['/savebook/add']);
+  }, error => {
+    this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+        , null, {
+            duration: 2000
+        });
+      }); 
+
+} else
+{
+  this.genreServise.updateGenre(this.genre).subscribe((response: HttpResponse<any>) => {
+    this.snackBar.open('Жанр успішно відредагований.', null, {
+      duration: 2000
+  });
+  this.router.navigate(['books']);
+}, error => {
+  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+      , null, {
+          duration: 2000
+      });
+    });
+}
+}
 
 
 goBack(): void {

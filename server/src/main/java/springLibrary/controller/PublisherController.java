@@ -77,6 +77,14 @@ public class PublisherController {
         return publisherService.findByCharacterResponse(character);
     }
 
+    @PutMapping("/publishers/update/{id}")
+    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody PublisherRequest publisherRequest) {
+        LOGGER.info("publisher id = " + id);
+        LOGGER.info("publisherRequest = " + publisherRequest);
+        publisherService.updateFromRequest(id,publisherRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 
 }

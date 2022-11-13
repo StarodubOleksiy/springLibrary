@@ -1,6 +1,8 @@
 package springLibrary.service;
 
 import springLibrary.entities.Genre;
+import springLibrary.model.request.AuthorRequest;
+import springLibrary.model.request.GenreRequest;
 import springLibrary.model.response.GenreResponse;
 import springLibrary.repository.GenreRepository;
 
@@ -15,4 +17,6 @@ public interface GenreService extends Service<Genre, Long, GenreRepository> {
     public Optional<GenreResponse> findByIdResponse(Long id);
 
     public void save(Genre genre);
+
+    public void updateFromRequest(Long id, GenreRequest genreRequest);
 }

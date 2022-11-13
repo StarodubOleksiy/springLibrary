@@ -64,32 +64,35 @@ export class AddPublisherComponent implements OnInit {
 }
 
 
-  savePublisher(): void {
-      if (this.configureType.type === SavePublisherConfigureType.EDIT)
-    this.publisher.id = this.loadedPublisher.id;
+savePublisher(): void {
+  if (this.configureType.type === SavePublisherConfigureType.ADD) {
     this.publisherServise.savePublisher(this.publisher).subscribe((response: HttpResponse<any>) => {
-      if (this.configureType.type === SavePublisherConfigureType.ADD) {
-        this.snackBar.open('Нове видавництво успішно додано.', null, {
-            duration: 2000
-        });
-      if(isNaN(this.bookId))
-      this.router.navigate(['/savebook/add']);
-       else
-       this.router.navigate(['/savebook/edit/'+this.bookId]);
-    } else {
-        this.snackBar.open('Видавництво успішно відредаговане.', null, {
-            duration: 2000
-        });
-        this.router.navigate(['publishers']);
-    }
-     
-    }, error => {
-        this.snackBar.open('Publisher  with the such name is already exists in database .'
-            , null, {
-                duration: 2000
-            });
+      this.snackBar.open('Нове видавництво успішно додане.', null, {
+        duration: 2000
     });
-};
+    this.router.navigate(['/savebook/add']);
+  }, error => {
+    this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+        , null, {
+            duration: 2000
+        });
+      }); 
+
+} else
+{
+  this.publisherServise.updatePublisher(this.publisher).subscribe((response: HttpResponse<any>) => {
+    this.snackBar.open('Видавництво успішно відредаговане.', null, {
+      duration: 2000
+  });
+  this.router.navigate(['publishers']);
+}, error => {
+  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+      , null, {
+          duration: 2000
+      });
+    });
+}
+}
 
 goBack(): void {
   this.location.back();

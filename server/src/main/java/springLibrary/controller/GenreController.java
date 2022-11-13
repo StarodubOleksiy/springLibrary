@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Book;
 import springLibrary.entities.Genre;
+import springLibrary.model.request.AuthorRequest;
 import springLibrary.model.request.GenreRequest;
 import springLibrary.model.response.BookResponse;
 import springLibrary.model.response.GenreResponse;
@@ -60,6 +61,12 @@ public class GenreController {
     }
 
 
-
+    @PutMapping("/genres/update/{id}")
+    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody GenreRequest genreRequest) {
+        LOGGER.info("author id = " + id);
+        LOGGER.info("bookRequest = " + genreRequest);
+        genreService.updateFromRequest(id,genreRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }

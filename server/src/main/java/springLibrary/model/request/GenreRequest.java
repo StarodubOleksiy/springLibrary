@@ -17,6 +17,10 @@ public class GenreRequest {
         return genre;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "GenreRequest{" +
