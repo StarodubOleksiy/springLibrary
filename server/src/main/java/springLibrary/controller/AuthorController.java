@@ -49,10 +49,9 @@ public class AuthorController {
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect author id", HttpStatus.BAD_REQUEST));
     }
 
-    @PostMapping("/author/delete")
-    public ResponseEntity<?> delete(@RequestBody AuthorRequest authorRequest) {
-        Author author = authorRequest.toAuthor();
-        authorService.delete(author);
+    @DeleteMapping("/author/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        authorService.deleteAuthor(id);
         return new ResponseEntity<>(HttpStatus.OK);
 
     }

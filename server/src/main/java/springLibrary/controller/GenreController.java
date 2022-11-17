@@ -52,12 +52,11 @@ public class GenreController {
     }
 
 
-    @PostMapping("/genre/delete")
-    public ResponseEntity<?> delete(@RequestBody GenreRequest genreRequest) {
-        Genre genre = genreRequest.toGenre();
-        genreService.delete(genre);
-        return new ResponseEntity<>(HttpStatus.OK);
 
+    @DeleteMapping("/genre/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        genreService.deleteGenre(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

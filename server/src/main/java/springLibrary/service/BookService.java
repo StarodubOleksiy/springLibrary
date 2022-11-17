@@ -48,5 +48,6 @@ public interface BookService  extends Service<Book, Long, BookRepository> {
 
    public void updateFromRequest(Long id, BookRequest bookRequest);
 
+   public void deleteBook(Long id);
 
 }

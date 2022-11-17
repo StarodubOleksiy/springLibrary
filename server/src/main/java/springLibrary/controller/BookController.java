@@ -113,9 +113,9 @@ public class BookController {
     }
 
 
-    @PostMapping("/book/delete")
-    public ResponseEntity<?> delete(@RequestBody BookRequest bookRequest) {
-        bookService.deleteBook(bookRequest);
+    @DeleteMapping("/book/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        bookService.deleteBook(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

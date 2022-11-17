@@ -43,19 +43,9 @@ export class AuthorService {
 
     
     deleteAuthor(author: Author): Observable<HttpResponse<any>> {
-      return this.http.post<HttpResponse<any>>(
-        this.authorUrl + '/author/delete', author, {observe: 'response'});
+      return this.http.delete<HttpResponse<any>>(
+        this.authorUrl + '/author/delete/'+author.id, {observe: 'response'});
     }
-
-     
-    deleteAuthorNewVersion(author: Author): Observable<Author> {
-     const url = `${this.authorUrl + '/author/delete'}/${author.id}`;
-     return this.http.delete<Author>(url, this.httpOptions)
-     .pipe(
-       tap(_ => console.log(`deleted author id=${author.id}`)),
-       catchError(this.handleError<Author>('delete Author'))
-     );
-   }
 
 
    updateAuthor(author: Author): Observable<HttpResponse<any>> {

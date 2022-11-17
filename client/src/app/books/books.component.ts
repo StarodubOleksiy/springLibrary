@@ -3,9 +3,6 @@ import { Book } from '../model/book';
 import { Genre } from '../model/genre';
 import { AngularDeveloper } from '../model/AngularDeveloper';
 import { ThirdHero } from '../model/AngularDeveloper';
-import { Hero } from '../model/AngularDeveloper';
-import { HEROESIS } from '../model/AngularDeveloper';
-import { HEROESinstring } from '../model/AngularDeveloper';
 import { BookService } from '../book.service';
 import { GenreService } from '../genre.service';
 import {Router,ActivatedRoute} from '@angular/router';
@@ -222,37 +219,7 @@ addNewBook() :void {
 
 
 public onGenreDeleteClick(genre: Genre): void {
-  console.log("Button is clicked");
-  console.log("this.dev = "+this.dev);
-  console.log("this.hero = "+this.thirdHero);
- //HEROESIS.forEach(element => {
  
-  HEROESIS.forEach(element => {
-    var stringBuilder = new Array;
-    //sb.p
-       for (var key in element) 
-       {
-         console.log("key = "+key);
-         console.log("typeof(element[key]) = "+typeof(element[key]));
-         let result = "";
-         result += key;
-         result += "=";
-      //   console.log("key.toString() = " + key.toString());
-         if(key.toString().valueOf() ==='someArr'.valueOf())
-         {
-           console.log(" I find it");
-         result +="{";
-            } 
-                  result +=element[key];
-    
-        stringBuilder.push(result);
-   
-       }
-    //console.log("key in for element = "+key);
-    //console.log("key in for element (element[key]) = "+element[key]);
-    //console.log("key in for element (element[key]) = "+element[key]);
-    console.log("stringBuilder.toString() (array of objects) : ["+stringBuilder.toString()+"}]");
-    })
  
   var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей жанр?');
   if (deleteConfirmation)  

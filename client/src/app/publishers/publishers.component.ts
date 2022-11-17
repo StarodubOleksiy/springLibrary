@@ -97,7 +97,7 @@ checkingSearch(): void {
                           duration: 2000
                       });
               });
-                this.router.navigate(['publishers']);
+                
          }
   
 
@@ -106,10 +106,16 @@ checkingSearch(): void {
     if (response.status === HttpStatus.OK) {
         this.snackBar.open('Publisher deleted sucsessfully.', null, {
             duration: 2000
+            
         });
         let index = this.publishers.indexOf(publisher);
         this.publishers.splice(index, 1);
-    }  
+    }   else {
+      this.snackBar.open('Publisher cannot be deleted...'
+          , null, {
+              duration: 2000
+          });
+  }
   }
 
   private searchPublisher(): void {

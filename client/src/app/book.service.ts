@@ -87,19 +87,10 @@ getBooksByCriteria(criteria: SearchCreateria): Observable<HttpResponse<Book[] | 
 }
 
 
-  deleteBook(book: Book): Observable<HttpResponse<any>> {
-    return this.http.post<HttpResponse<any>>(
-        this.booksUrl + '/book/delete', book, {observe: 'response'});
+deleteBook(book: Book): Observable<HttpResponse<any>> {
+  return this.http.delete<HttpResponse<any>>(
+      this.booksUrl + '/book/delete/'+book.id, {observe: 'response'});
 }
-
-deleteBookNewVersion(book: Book): Observable<Book> {
-  const url = `${this.booksUrl + '/book/delete'}/${book.id}`;
-  return this.http.delete<Book>(url, this.httpOptions).pipe(
-    tap(_ => console.log(`deleted book id=${book.id}`)),
-    catchError(this.handleError<Book>('delete Book'))
-  );
-}
-
 
 getGenres(): Observable<HttpResponse<Genre[] | any>> {
   return this.http.get<HttpResponse<Genre[] | any>>(

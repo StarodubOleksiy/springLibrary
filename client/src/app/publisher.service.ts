@@ -48,17 +48,8 @@ export class PublisherService {
  
  
  deletePublisher(publisher: Publisher): Observable<HttpResponse<any>> {
-   return this.http.post<HttpResponse<any>>(
-     this.publisherUrl + '/publisher/delete', publisher, {observe: 'response'});
- }
-
- deletePublisherNewVersion(publisher: Publisher): Observable<Publisher> {
-  const url = `${this.publisherUrl + '/publisher/delete'}/${publisher.id}`;
-  return this.http.delete<Publisher>(url, this.httpOptions)
-  .pipe(
-    tap(_ => console.log(`deleted publisher id=${publisher.id}`)),
-    catchError(this.handleError<Publisher>('delete Publisher'))
-  );
+  return this.http.delete<HttpResponse<any>>(
+    this.publisherUrl + '/publisher/delete/'+publisher.id,  {observe: 'response'});
 }
 
 

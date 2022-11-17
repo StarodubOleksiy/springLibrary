@@ -31,4 +31,6 @@ public interface AuthorService  extends Service<Author, Long, AuthorRepository> 
 
     public void updateFromRequest(Long id, AuthorRequest authorRequest);
 
+    public void deleteAuthor(Long id);
+
 }

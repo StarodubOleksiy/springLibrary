@@ -86,9 +86,9 @@ export class AuthorsComponent implements OnInit {
                           duration: 2000
                       });
               });
-                this.router.navigate(['authors']);
          }
-  
+
+
 
          
   private onDeleteAuthorResponse(author: Author, response: HttpResponse<any>): void {
@@ -106,6 +106,8 @@ export class AuthorsComponent implements OnInit {
   }
 
   }
+
+
   
 
   private findAuthorsByName():void 

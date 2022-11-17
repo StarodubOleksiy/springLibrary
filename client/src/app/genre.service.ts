@@ -42,18 +42,9 @@ getGenre(id: number): Observable<Genre> {
 
 
 deleteGenre(genre: Genre): Observable<HttpResponse<any>> {
-  return this.http.post<HttpResponse<any>>(
-    this.genreUrl + '/genre/delete', genre, {observe: 'response'});
+  return this.http.delete<HttpResponse<any>>(
+    this.genreUrl + '/genre/delete/'+genre.id,{observe: 'response'});
 }
-
-deleteGenreNewVersion(genre: Genre): Observable<Genre> {
-  const url = `${this.genreUrl + '/genre/delete'}/${genre.id}`;
-  return this.http.delete<Genre>(url, this.httpOptions).pipe(
-    tap(_ => console.log(`deleted genre id=${genre.id}`)),
-    catchError(this.handleError<Genre>('delete Genre'))
-  );
-}
-
 
 updateGenre(genre: Genre): Observable<HttpResponse<any>> {
   return this.http.put<HttpResponse<any>>(

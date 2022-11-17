@@ -101,4 +101,10 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
         getRepository().save(publisher);
     }
 
+    @Override
+    @Transactional
+    public void deletePublisher(Long id) {
+        getRepository().deleteById(id);
+    }
+
 }

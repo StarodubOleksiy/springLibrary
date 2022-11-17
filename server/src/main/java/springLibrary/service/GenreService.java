@@ -19,4 +19,6 @@ public interface GenreService extends Service<Genre, Long, GenreRepository> {
     public void save(Genre genre);
 
     public void updateFromRequest(Long id, GenreRequest genreRequest);
+
+    public void deleteGenre(Long id);
 }

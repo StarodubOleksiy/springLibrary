@@ -214,5 +214,10 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
         getRepository().save(book);
     }
 
+    @Override
+    public void deleteBook(Long id) {
+        jdbcTemplate.update("delete  from library.bookauthor where bookid = ?", id);
+        jdbcTemplate.update("delete from library.book where id = ?", id);
+    }
 
 }

@@ -116,6 +116,11 @@ public class AuthorServiceImplementation extends AbstractService<Author, Long, A
         getRepository().save(author);
     }
 
+    @Override
+    @Transactional
+    public void deleteAuthor(Long id) {
+        getRepository().deleteById(id);
+    }
 
 }
 

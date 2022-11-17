@@ -53,14 +53,12 @@ public class PublisherController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/publisher/delete")
-    public ResponseEntity<?> delete(@RequestBody PublisherRequest publisherRequest) {
-        Publisher publisher = publisherRequest.toPublisher();
-        publisherService.delete(publisher);
+
+    @DeleteMapping("/publisher/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        publisherService.deletePublisher(id);
         return new ResponseEntity<>(HttpStatus.OK);
-
     }
-
 
     @PostMapping("/publisher/findbycriteria")
     public ResponseEntity<List<PublisherResponse>> findPublishers(@RequestBody PublisherSearchCreateria publisherSearchCreateria) {

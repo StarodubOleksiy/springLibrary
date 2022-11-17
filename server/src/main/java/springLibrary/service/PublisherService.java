@@ -34,4 +34,6 @@ public interface PublisherService extends Service<Publisher, Long, PublisherRepo
 
     public void updateFromRequest(Long id, PublisherRequest publisherRequest);
 
+    public void deletePublisher(Long id);
+
 }

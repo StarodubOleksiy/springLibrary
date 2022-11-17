@@ -66,5 +66,10 @@ public class GenreServiceImplementation extends AbstractService<Genre, Long, Gen
         getRepository().save(genre);
     }
 
+    @Override
+    @Transactional
+    public void deleteGenre(Long id) {
+        getRepository().deleteById(id);
+    }
 
 }
