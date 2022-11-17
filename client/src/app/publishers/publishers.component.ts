@@ -108,8 +108,9 @@ checkingSearch(): void {
             duration: 2000
             
         });
-        let index = this.publishers.indexOf(publisher);
+        let index = publisher.id;
         this.publishers.splice(index, 1);
+        this.ngOnInit();
     }   else {
       this.snackBar.open('Publisher cannot be deleted...'
           , null, {

@@ -98,8 +98,9 @@ export class AuthorsComponent implements OnInit {
         this.snackBar.open('Author deleted sucsessfully.', null, {
             duration: 2000
         });
-        let index = this.authors.indexOf(author);
+        let index = author.id;
         this.authors.splice(index, 1);
+        this.ngOnInit();
     }  else {
       this.snackBar.open('Author cannot be deleted.'
           , null, {
