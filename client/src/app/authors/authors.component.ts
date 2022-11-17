@@ -92,7 +92,9 @@ export class AuthorsComponent implements OnInit {
 
          
   private onDeleteAuthorResponse(author: Author, response: HttpResponse<any>): void {
-    if (response.status === HttpStatus.OK) {
+    console.log('response.status ==='+response.status);
+    console.log('HttpStatus.NO_CONTENT ==='+HttpStatus.NO_CONTENT);
+    if (response.status === HttpStatus.NO_CONTENT) {
         this.snackBar.open('Author deleted sucsessfully.', null, {
             duration: 2000
         });
