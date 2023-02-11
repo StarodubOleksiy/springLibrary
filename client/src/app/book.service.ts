@@ -39,7 +39,7 @@ httpOptions = {
 
   updateBook(book: Book): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
-        this.booksUrl + '/books/update/'+book.id, book, {observe: 'response'});
+        this.booksUrl + '/books/update/', book, {observe: 'response'});
   } 
   
 

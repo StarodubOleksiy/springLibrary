@@ -38,8 +38,7 @@ public class GenreController {
 
     @PostMapping("/addgenre/save")
     ResponseEntity<?> save(@RequestBody GenreRequest genreRequest) {
-        Genre genre = genreRequest.toGenre();
-        genreService.save(genre);
+        genreService.saveFromRequest(genreRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -60,11 +59,10 @@ public class GenreController {
     }
 
 
-    @PutMapping("/genres/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody GenreRequest genreRequest) {
-        LOGGER.info("author id = " + id);
+    @PutMapping("/genres/update/")
+    public ResponseEntity<?> update(@RequestBody GenreRequest genreRequest) {
         LOGGER.info("bookRequest = " + genreRequest);
-        genreService.updateFromRequest(id, genreRequest);
+        genreService.updateFromRequest(genreRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

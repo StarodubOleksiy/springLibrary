@@ -50,7 +50,7 @@ export class AuthorService {
 
    updateAuthor(author: Author): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
-        this.authorUrl + '/authors/update/'+author.id, author, {observe: 'response'});
+        this.authorUrl + '/authors/update/', author, {observe: 'response'});
   } 
    
 

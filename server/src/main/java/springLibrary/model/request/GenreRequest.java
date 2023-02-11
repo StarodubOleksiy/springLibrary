@@ -11,10 +11,12 @@ public class GenreRequest {
 
     public Genre toGenre() {
         Genre genre = new Genre();
-        if(id != null)
-        genre.setId(id);
         genre.setName(name);
         return genre;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {

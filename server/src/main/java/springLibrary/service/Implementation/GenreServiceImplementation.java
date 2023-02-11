@@ -53,15 +53,18 @@ public class GenreServiceImplementation extends AbstractService<Genre, Long, Gen
         return getRepository().findById(id).map(this::genreToGenreResponse);
     }
 
-    public void save(Genre genre) {
+    @Override
+    @Transactional
+    public void saveFromRequest(GenreRequest genreRequest) {
+        Genre genre = genreRequest.toGenre();
         super.save(genre);
     }
 
 
     @Override
     @Transactional
-    public void updateFromRequest(Long id, GenreRequest genreRequest) {
-        Genre genre = findById(id).orElse(null);
+    public void updateFromRequest(GenreRequest genreRequest) {
+        Genre genre = findById(genreRequest.getId()).orElse(null);
         genre.setName(genreRequest.getName());
         getRepository().save(genre);
     }

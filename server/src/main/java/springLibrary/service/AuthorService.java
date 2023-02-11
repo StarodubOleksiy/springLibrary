@@ -12,7 +12,6 @@ import java.util.Optional;
 
 public interface AuthorService  extends Service<Author, Long, AuthorRepository> {
 
-
     public List<AuthorResponse> findByAuthorsByName(String name);
 
     public List<AuthorResponse> findAllResponse();
@@ -29,7 +28,7 @@ public interface AuthorService  extends Service<Author, Long, AuthorRepository> 
 
     public List<AuthorResponse> findByBookResponse(long id);
 
-    public void updateFromRequest(Long id, AuthorRequest authorRequest);
+    public void updateFromRequest(AuthorRequest authorRequest);
 
     public void deleteAuthor(Long id);
 

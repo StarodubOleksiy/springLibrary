@@ -41,26 +41,30 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
     }
 
 
-
     @Override
+    @Transactional
     public Optional<PublisherResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::publisherToPublisherResponse);
     }
 
 
     @Override
+    @Transactional
     public List<PublisherResponse> findAllResponse() {
         return getRepository().findAll().stream()
                 .map(this::publisherToPublisherResponse)
                 .collect(Collectors.toList());
     }
 
-
-    public void save(Publisher publisher) {
-            super.save(publisher);
+    @Override
+    @Transactional
+    public void saveFromRequest(PublisherRequest publisherRequest) {
+        Publisher publisher = publisherRequest.toPublisher();
+        super.save(publisher);
     }
 
     @Override
+    @Transactional
     public List<PublisherResponse> findByNameResponse(String name) {
         return getRepository().findByName(name).stream()
                 .map(this::publisherToPublisherResponse)
@@ -68,6 +72,7 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
     }
 
     @Override
+    @Transactional
     public List<PublisherResponse> findByCityResponse(String city) {
         return getRepository().findByCity(city).stream()
                 .map(this::publisherToPublisherResponse)
@@ -76,16 +81,19 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
 
 
     @Override
+    @Transactional
     public List<Publisher> findByName(String name) {
         return repository.findByName(name);
     }
 
     @Override
+    @Transactional
     public List<Publisher> findByCity(String name) {
         return repository.findByCity(name);
     }
 
     @Override
+    @Transactional
     public List<PublisherResponse> findByCharacterResponse(String character) {
         return getRepository().findByCharacter(character.charAt(0)).stream()
                 .map(this::publisherToPublisherResponse)
@@ -94,8 +102,8 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
 
     @Override
     @Transactional
-    public void updateFromRequest(Long id, PublisherRequest publisherRequest) {
-        Publisher publisher = findById(id).orElse(null);
+    public void updateFromRequest(PublisherRequest publisherRequest) {
+        Publisher publisher = findById(publisherRequest.getId()).orElse(null);
         publisher.setName(publisherRequest.getName());
         publisher.setCity(publisherRequest.getCity());
         getRepository().save(publisher);

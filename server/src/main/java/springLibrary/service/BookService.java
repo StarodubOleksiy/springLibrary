@@ -26,7 +26,7 @@ public interface BookService  extends Service<Book, Long, BookRepository> {
 
    public Optional<BookResponse> findByIdResponse(Long id);
 
-   public void saveFromRequest(Book book, BookRequest bookRequest);
+   public void saveFromRequest(BookRequest bookRequest);
 
    public List<BookResponse> findByGenreResponse(long id);
 
@@ -46,7 +46,7 @@ public interface BookService  extends Service<Book, Long, BookRepository> {
 
    public List<BookResponse> findByPlacingResponse(String room, String placing);
 
-   public void updateFromRequest(Long id, BookRequest bookRequest);
+   public void updateFromRequest(BookRequest bookRequest);
 
    public void deleteBook(Long id);
 

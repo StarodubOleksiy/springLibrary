@@ -94,21 +94,16 @@ public class BookController {
         return bookService.findByAuthorResponse(id);
     }
 
-    // Todo fix it later https://github.com/oksanamekh/SmartParking/blob/development/server/src/main/java/com/smartparking/service/impl/ClientServiceImpl.java
     @PostMapping("books/save")
     public ResponseEntity<?> save(@RequestBody BookRequest bookRequest) {
-        Book book = bookRequest.toBook();
-        book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
-        book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
-        bookService.saveFromRequest(book, bookRequest);
+        bookService.saveFromRequest(bookRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/books/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody BookRequest bookRequest) {
-        LOGGER.info("book id = " + id);
+    @PutMapping("/books/update/")
+    public ResponseEntity<?> update(@RequestBody BookRequest bookRequest) {
         LOGGER.info("bookRequest = " + bookRequest);
-        bookService.updateFromRequest(id,bookRequest);
+        bookService.updateFromRequest(bookRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

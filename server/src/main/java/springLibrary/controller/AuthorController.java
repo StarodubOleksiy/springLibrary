@@ -74,11 +74,10 @@ public class AuthorController {
     }
 
 
-    @PutMapping("/authors/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody AuthorRequest authorRequest) {
-        LOGGER.info("author id = " + id);
+    @PutMapping("/authors/update/")
+    public ResponseEntity<?> update(@RequestBody AuthorRequest authorRequest) {
         LOGGER.info("bookRequest = " + authorRequest);
-        authorService.updateFromRequest(id,authorRequest);
+        authorService.updateFromRequest(authorRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

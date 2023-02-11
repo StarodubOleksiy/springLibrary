@@ -133,11 +133,12 @@ public class BookRequest {
 
     public Book toBook() {
         Book book = new Book();
-        if (id != null)
-            book.setId(id);
         book.setName(name);
         book.setIsbn(isbn);
         book.setPublishYear(publishYear);
+        if (getImage() != null) {
+            book.setImage(Base64.getDecoder().decode(getImage()));
+        }
         book.setDescr(descr);
         book.setPageCount(pageCount);
         book.setType(this.getType());

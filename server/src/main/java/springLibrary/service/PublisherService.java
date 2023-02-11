@@ -20,7 +20,7 @@ public interface PublisherService extends Service<Publisher, Long, PublisherRepo
 
     public Optional<PublisherResponse> findByIdResponse(Long id);
 
-    public void save(Publisher publisher);
+    public void saveFromRequest(PublisherRequest publisherRequest);
 
     public List<Publisher> findByName(String name);
 
@@ -32,7 +32,7 @@ public interface PublisherService extends Service<Publisher, Long, PublisherRepo
 
     public List<PublisherResponse> findByCharacterResponse(String character);
 
-    public void updateFromRequest(Long id, PublisherRequest publisherRequest);
+    public void updateFromRequest(PublisherRequest publisherRequest);
 
     public void deletePublisher(Long id);
 

@@ -68,7 +68,6 @@ public class AuthorServiceImplementation extends AbstractService<Author, Long, A
     @Transactional
     public void saveFromRequest(AuthorRequest authorRequest) {
         Author author = authorRequest.toAuthor();
-        author.createBooks();
         getRepository().save(author);
     }
 
@@ -110,8 +109,8 @@ public class AuthorServiceImplementation extends AbstractService<Author, Long, A
 
     @Override
     @Transactional
-    public void updateFromRequest(Long id, AuthorRequest authorRequest) {
-        Author author = findById(id).orElse(null);
+    public void updateFromRequest(AuthorRequest authorRequest) {
+        Author author = findById(authorRequest.getId()).orElse(null);
         author.setFio(authorRequest.getName());
         getRepository().save(author);
     }

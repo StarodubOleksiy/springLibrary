@@ -48,7 +48,7 @@ deleteGenre(genre: Genre): Observable<HttpResponse<any>> {
 
 updateGenre(genre: Genre): Observable<HttpResponse<any>> {
   return this.http.put<HttpResponse<any>>(
-      this.genreUrl + '/genres/update/'+genre.id, genre, {observe: 'response'});
+      this.genreUrl + '/genres/update/', genre, {observe: 'response'});
 } 
  
 

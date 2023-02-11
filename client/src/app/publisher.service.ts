@@ -55,7 +55,7 @@ export class PublisherService {
 
 updatePublisher(publisher: Publisher): Observable<HttpResponse<any>> {
   return this.http.put<HttpResponse<any>>(
-      this.publisherUrl + '/publishers/update/'+publisher.id, publisher, {observe: 'response'});
+      this.publisherUrl + '/publishers/update/', publisher, {observe: 'response'});
 } 
  
 

@@ -15,10 +15,8 @@ public class AuthorRequest {
 
     public Author toAuthor() {
         Author author = new Author();
-        if (id != null)
-            author.setId(id);
         author.setFio(name);
-
+        author.createBooks();
         return author;
     }
 

@@ -30,10 +30,10 @@ public class PublisherController {
     private PublisherService publisherService;
 
 
-        @GetMapping("/booksbypublisher")
+    @GetMapping("/booksbypublisher")
     public ResponseEntity<List<PublisherResponse>> publishers() {
-            List<PublisherResponse> publishersList = publisherService.findAllResponse();
-            Collections.sort(publishersList);
+        List<PublisherResponse> publishersList = publisherService.findAllResponse();
+        Collections.sort(publishersList);
         return new ResponseEntity<>(publishersList, HttpStatus.OK);
 
     }
@@ -41,15 +41,14 @@ public class PublisherController {
 
     @GetMapping("publisher/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
-          return publisherService.findByIdResponse(id)
+        return publisherService.findByIdResponse(id)
                 .map(publisher -> new ResponseEntity<Object>(publisher, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect publisher id", HttpStatus.BAD_REQUEST));
     }
 
     @PostMapping("/addpublisher/save")
     ResponseEntity<?> save(@RequestBody PublisherRequest publisherRequest) {
-        Publisher publisher = publisherRequest.toPublisher();
-        publisherService.save(publisher);
+        publisherService.saveFromRequest(publisherRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -62,7 +61,7 @@ public class PublisherController {
 
     @PostMapping("/publisher/findbycriteria")
     public ResponseEntity<List<PublisherResponse>> findPublishers(@RequestBody PublisherSearchCreateria publisherSearchCreateria) {
-       LOGGER.info("publisherSearchCreateria.toString() = "+publisherSearchCreateria.toString());
+        LOGGER.info("publisherSearchCreateria.toString() = " + publisherSearchCreateria.toString());
         if (publisherSearchCreateria.isFindByCity() == false)
             return new ResponseEntity<>(publisherService.findByNameResponse(publisherSearchCreateria.getSearchWord()), HttpStatus.OK);
         else
@@ -75,14 +74,12 @@ public class PublisherController {
         return publisherService.findByCharacterResponse(character);
     }
 
-    @PutMapping("/publishers/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id,@RequestBody PublisherRequest publisherRequest) {
-        LOGGER.info("publisher id = " + id);
+    @PutMapping("/publishers/update/")
+    public ResponseEntity<?> update( @RequestBody PublisherRequest publisherRequest) {
         LOGGER.info("publisherRequest = " + publisherRequest);
-        publisherService.updateFromRequest(id,publisherRequest);
+        publisherService.updateFromRequest(publisherRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 
 
 }

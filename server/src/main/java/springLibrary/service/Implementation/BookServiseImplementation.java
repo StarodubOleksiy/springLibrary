@@ -159,10 +159,10 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
 
     @Override
     @Transactional
-    public void saveFromRequest(Book book, BookRequest bookRequest) {
-        if (bookRequest.getImage() != null) {
-            book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
-        }
+    public void saveFromRequest(BookRequest bookRequest) {
+        Book book = bookRequest.toBook();
+        book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
+        book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
         Integer values[] = bookRequest.getAuthorsId();
         for (int i = 0; i < values.length; ++i)
             book.addAuthor(authorService.findById((long) values[i]).orElse(null));
@@ -189,8 +189,8 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
 
     @Override
     @Transactional
-    public void updateFromRequest(Long id, BookRequest bookRequest) {
-        Book book = findById(id).orElse(null);
+    public void updateFromRequest(BookRequest bookRequest) {
+        Book book = findById(bookRequest.getId()).orElse(null);
         book.setName(bookRequest.getName());
         book.setGenre(genreService.getOne(bookRequest.getGenreId()));
         this.deleteRelationshipBetweenBooksAndAuthor(book.getId());

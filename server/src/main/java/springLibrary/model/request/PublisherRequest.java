@@ -13,8 +13,6 @@ public class PublisherRequest {
 
     public Publisher toPublisher() {
         Publisher publisher = new Publisher();
-        if (id != null)
-            publisher.setId(id);
         publisher.setName(name);
         publisher.setCity(city);
         return publisher;
