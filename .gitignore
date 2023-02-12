@@ -21,6 +21,7 @@
 # Idea
 .idea/
 out/
+server/target
 *.iml
 *.iws
 
