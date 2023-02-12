@@ -1,6 +1,7 @@
 package springLibrary.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.util.StringUtils;
 
 import java.sql.Date;
 import java.util.HashSet;
@@ -35,7 +36,7 @@ public class Author implements java.io.Serializable {
     }
 
     public void setFio(String fio) {
-        this.fio = fio;
+        this.fio = StringUtils.capitalize(fio.toLowerCase());
     }
 
     public void createBooks() {

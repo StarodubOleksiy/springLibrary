@@ -1,6 +1,7 @@
 package springLibrary.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.util.StringUtils;
 import springLibrary.enums.Room;
 import springLibrary.enums.Type;
 
@@ -73,7 +74,7 @@ public class Book implements java.io.Serializable {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize(name.toLowerCase());
     }
 
 

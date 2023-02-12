@@ -1,6 +1,8 @@
 package springLibrary.entities;
 
 
+import org.springframework.util.StringUtils;
+
 import java.util.List;
 import java.util.Set;
 
@@ -33,7 +35,7 @@ public class    Genre {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize( name.toLowerCase());
     }
 
 

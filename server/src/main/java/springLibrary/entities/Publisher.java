@@ -1,6 +1,8 @@
 package springLibrary.entities;
 
 
+import org.springframework.util.StringUtils;
+
 import java.util.Set;
 
 public class Publisher {
@@ -10,7 +12,7 @@ public class Publisher {
     private Set<Book> books;
 
 
-  public Set<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
@@ -39,7 +41,7 @@ public class Publisher {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize(name.toLowerCase());
     }
 
 
