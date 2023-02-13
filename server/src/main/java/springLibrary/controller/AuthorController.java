@@ -76,7 +76,6 @@ public class AuthorController {
 
     @PutMapping("/authors/update/")
     public ResponseEntity<?> update(@RequestBody AuthorRequest authorRequest) {
-        LOGGER.info("bookRequest = " + authorRequest);
         authorService.updateFromRequest(authorRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }

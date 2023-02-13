@@ -76,7 +76,6 @@ public class PublisherController {
 
     @PutMapping("/publishers/update/")
     public ResponseEntity<?> update( @RequestBody PublisherRequest publisherRequest) {
-        LOGGER.info("publisherRequest = " + publisherRequest);
         publisherService.updateFromRequest(publisherRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }

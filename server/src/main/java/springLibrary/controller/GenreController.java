@@ -51,7 +51,6 @@ public class GenreController {
     }
 
 
-
     @DeleteMapping("/genre/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         genreService.deleteGenre(id);
@@ -61,7 +60,6 @@ public class GenreController {
 
     @PutMapping("/genres/update/")
     public ResponseEntity<?> update(@RequestBody GenreRequest genreRequest) {
-        LOGGER.info("bookRequest = " + genreRequest);
         genreService.updateFromRequest(genreRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }

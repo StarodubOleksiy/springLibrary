@@ -102,7 +102,6 @@ public class BookController {
 
     @PutMapping("/books/update/")
     public ResponseEntity<?> update(@RequestBody BookRequest bookRequest) {
-        LOGGER.info("bookRequest = " + bookRequest);
         bookService.updateFromRequest(bookRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
