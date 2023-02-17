@@ -111,7 +111,7 @@ public class AuthorServiceImplementation extends AbstractService<Author, Long, A
     @Transactional
     public void updateFromRequest(AuthorRequest authorRequest) {
         Author author = findById(authorRequest.getId()).orElse(null);
-        author.setFio(authorRequest.getName());
+        authorRequest.setAuthorFromRequest(author);
         getRepository().save(author);
     }
 

@@ -13,8 +13,7 @@ public class PublisherRequest {
 
     public Publisher toPublisher() {
         Publisher publisher = new Publisher();
-        publisher.setName(name);
-        publisher.setCity(city);
+        this.setPublisherFromRequest(publisher);
         return publisher;
     }
 
@@ -40,6 +39,11 @@ public class PublisherRequest {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public void setPublisherFromRequest(Publisher publisher) {
+        publisher.setName(name);
+        publisher.setCity(city);
     }
 
     @Override

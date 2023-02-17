@@ -133,6 +133,12 @@ public class BookRequest {
 
     public Book toBook() {
         Book book = new Book();
+        this.setBookFromRequest(book);
+        return book;
+    }
+
+    public void setBookFromRequest(Book book)
+    {
         book.setName(name);
         book.setIsbn(isbn);
         book.setPublishYear(publishYear);
@@ -144,7 +150,6 @@ public class BookRequest {
         book.setType(this.getType());
         book.setRoom(this.getRoom());
         book.setPlacing(placing);
-        return book;
     }
 
 

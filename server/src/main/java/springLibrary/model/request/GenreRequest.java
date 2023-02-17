@@ -11,7 +11,7 @@ public class GenreRequest {
 
     public Genre toGenre() {
         Genre genre = new Genre();
-        genre.setName(name);
+        this.setGenreFromRequest(genre);
         return genre;
     }
 
@@ -21,6 +21,10 @@ public class GenreRequest {
 
     public String getName() {
         return name;
+    }
+
+    public void setGenreFromRequest(Genre genre) {
+        genre.setName(name);
     }
 
     @Override

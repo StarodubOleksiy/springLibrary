@@ -65,7 +65,7 @@ public class GenreServiceImplementation extends AbstractService<Genre, Long, Gen
     @Transactional
     public void updateFromRequest(GenreRequest genreRequest) {
         Genre genre = findById(genreRequest.getId()).orElse(null);
-        genre.setName(genreRequest.getName());
+        genreRequest.setGenreFromRequest(genre);
         getRepository().save(genre);
     }
 

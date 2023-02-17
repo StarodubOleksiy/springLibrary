@@ -15,7 +15,7 @@ public class AuthorRequest {
 
     public Author toAuthor() {
         Author author = new Author();
-        author.setFio(name);
+        this.setAuthorFromRequest(author);
         author.createBooks();
         return author;
     }
@@ -47,5 +47,10 @@ public class AuthorRequest {
             toString.append("booksId = null");
         toString.append('}');
         return toString.toString();
+    }
+
+    public void setAuthorFromRequest(Author author)
+    {
+        author.setFio(name);
     }
 }

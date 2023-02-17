@@ -91,8 +91,12 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
         response.setPlacing(book.getPlacing());
         response.setType(book.getType());
         response.setAuthorsId(book.getAuthors());
-
         return response;
+    }
+
+    private void assignBook(Book book, BookRequest bookRequest) {
+        book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
+        book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
     }
 
 
@@ -161,8 +165,7 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
     @Transactional
     public void saveFromRequest(BookRequest bookRequest) {
         Book book = bookRequest.toBook();
-        book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
-        book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
+        this.assignBook(book, bookRequest);
         Integer values[] = bookRequest.getAuthorsId();
         for (int i = 0; i < values.length; ++i)
             book.addAuthor(authorService.findById((long) values[i]).orElse(null));
@@ -191,8 +194,8 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
     @Transactional
     public void updateFromRequest(BookRequest bookRequest) {
         Book book = findById(bookRequest.getId()).orElse(null);
-        book.setName(bookRequest.getName());
-        book.setGenre(genreService.getOne(bookRequest.getGenreId()));
+        bookRequest.setBookFromRequest(book);
+        this.assignBook(book, bookRequest);
         this.deleteRelationshipBetweenBooksAndAuthor(book.getId());
         Set<Author> authors = new HashSet<>();
         for (int authorId : bookRequest.getAuthorsId()) {
@@ -200,17 +203,6 @@ public class BookServiseImplementation extends AbstractService<Book, Long, BookR
             authors.add(authorService.getOne(Long.valueOf(authorId)));
         }
         book.setAuthors(authors);
-        book.setPublisher(publisherService.getOne(bookRequest.getPublisherId()));
-        book.setIsbn(bookRequest.getIsbn());
-        book.setDescr(bookRequest.getDescr());
-        if (bookRequest.getImage() != null) {
-            book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
-        }
-        book.setPageCount(bookRequest.getPageCount());
-        book.setPublishYear(book.getPublishYear());
-        book.setRoom(bookRequest.getRoom());
-        book.setType(bookRequest.getType());
-        book.setPlacing(bookRequest.getPlacing());
         getRepository().save(book);
     }
 

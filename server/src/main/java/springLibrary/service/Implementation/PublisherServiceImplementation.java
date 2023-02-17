@@ -104,8 +104,7 @@ public class PublisherServiceImplementation extends AbstractService<Publisher, L
     @Transactional
     public void updateFromRequest(PublisherRequest publisherRequest) {
         Publisher publisher = findById(publisherRequest.getId()).orElse(null);
-        publisher.setName(publisherRequest.getName());
-        publisher.setCity(publisherRequest.getCity());
+        publisherRequest.setPublisherFromRequest(publisher);
         getRepository().save(publisher);
     }
 
