@@ -96,7 +96,21 @@ public class BookController {
 
     @PostMapping("books/save")
     public ResponseEntity<?> save(@RequestBody BookRequest bookRequest) {
-        bookService.saveFromRequest(bookRequest);
+        try {
+            bookService.saveFromRequest(bookRequest);
+        } catch (Exception exception) {
+            LOGGER.info("=================Exception happened!!!!!!!!!!!!!!!!!!!!!++++++++++++++++++++");
+            LOGGER.info("=================exception.getMessage!!!!!!!!!!++++++++++++;" + exception.getMessage());
+            LOGGER.info("=================exception.toString()!!!!!!!!!++++++++++;" + exception.toString());
+            LOGGER.info("=================exception..getLocalizedMessage()***---;" + exception.getLocalizedMessage());
+            LOGGER.info("=================exception.toString()!!!!!!!!!++++++++++;" + exception.toString());
+            LOGGER.info("=====exception.getClass().getCanonicalName();***---;" + exception.getClass().getCanonicalName());
+            LOGGER.info("=====exception.getStackTrace()///,.,.,.;" + Arrays.asList(exception.getStackTrace()));
+            if (exception.getMessage().contains("GenericJDBCException"))
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            else // Path to this file (max_allowed_packet in my.ini) is: C:\ProgramData\MySQL\MySQL Server 5.7
+                return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -171,7 +171,7 @@ saveBook(): void {
     this.router.navigate(['books']);
   }, error => {
     this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-        , null, {
+        , error.status, {
             duration: 2000
         });
       }); 
