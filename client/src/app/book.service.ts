@@ -7,6 +7,7 @@ import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import {environment} from '../environments/environment';
 import { SearchCreateria } from './SearchCreateria';
+import {Router} from '@angular/router';
 
 
 
@@ -25,7 +26,8 @@ httpOptions = {
  private booksUrl = environment.apiUrl;   // URL to web api
  //private booksUrl = '/books';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router) { }
 
  
 
@@ -47,15 +49,15 @@ httpOptions = {
   getBook(id: number): Observable<Book> {
     console.log('is this function working?');
    console.log(this.booksUrl + 'book/' + id);
-   return this.http.get<Book>(this.booksUrl + '/books/' + id)
-   .map(json => {
-     return Book.copyOf(json);
-   }
-   );
-    
- }
+   return this.http.get<Book>(this.booksUrl + '/books/' + id).pipe(map(json => {
+    return Book.copyOf(json);
+  }
+  ),
+  catchError(this.handleError<Book[] | any>('Book with id=${id} have not found' 
+  ))
+  )
+  }
 
- 
 
  getBooks(): Observable<HttpResponse<Book[] | any>> {
       return this.http.get<HttpResponse<Book[] | any>>(
@@ -126,6 +128,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     console.log(`${operation} failed: ${error.message}`);
 
     // Let the app keep running by returning an empty result.
+    this.router.navigate(['**']);
     return Observable.of(result as T);
   };
 }
