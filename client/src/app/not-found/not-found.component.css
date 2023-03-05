@@ -1,0 +1,25 @@
+a {
+    font-size: 30px;
+}
+
+a:link {
+    color: rgb(15, 19, 248);
+    text-decoration: underline;
+    
+}
+
+/* visited link */
+a:visited {
+    color: rgb(16, 203, 236);
+    text-decoration: underline;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}

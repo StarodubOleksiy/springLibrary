@@ -9,10 +9,12 @@ import { AddGenreComponent }  from './add-genre/add-genre.component';
 import { AddAuthorComponent }  from './add-author/add-author.component';
 import { AddPublisherComponent }  from './add-publisher/add-publisher.component';
 import { SavebookComponent }  from './savebook/savebook.component';
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' },
+  { path: 'index', redirectTo: '/books', pathMatch: 'full' },
   { path: 'books', component: BooksComponent },
   { path: 'booksbygenre/:id', component: BooksComponent },
   { path: 'books/:id', component: BookDetailComponent },
@@ -81,9 +83,9 @@ const routes: Routes = [
     }
 ]
 },{ path: 'books/author/:id', component: BooksComponent },
-  { path: 'books/publisher/:id', component: BooksComponent }
-  
-];
+  { path: 'books/publisher/:id', component: BooksComponent },
+  { path: '**', component: NotFoundComponent }
+     ];
 
 @NgModule({
   imports: [

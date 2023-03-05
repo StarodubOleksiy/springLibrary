@@ -34,6 +34,7 @@ import { AddPublisherComponent } from './add-publisher/add-publisher.component';
 import { PublishersComponent } from './publishers/publishers.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {NgbModule,NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NotFoundComponent} from "./not-found/not-found.component";
 import { Component } from '@angular/core';
 
 
@@ -74,8 +75,8 @@ import { Component } from '@angular/core';
     AddAuthorComponent,
     AddPublisherComponent,
     PublishersComponent,
-    NgbdModalConfirm
-     
+    NgbdModalConfirm,
+    NotFoundComponent
   ],
    entryComponents: [NgbdModalConfirm],
    providers: [BookService, GenreService,AuthorService,PublisherService], 

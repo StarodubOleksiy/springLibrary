@@ -47,9 +47,11 @@ httpOptions = {
   getBook(id: number): Observable<Book> {
     console.log('is this function working?');
    console.log(this.booksUrl + 'book/' + id);
-   return this.http.get<Book>(this.booksUrl + '/books/' + id).map(json => {
+   return this.http.get<Book>(this.booksUrl + '/books/' + id)
+   .map(json => {
      return Book.copyOf(json);
-   });
+   }
+   );
     
  }
 
