@@ -52,11 +52,6 @@ public class BookController {
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
     }
 
-    @GetMapping("book/findbyname")
-    public List<Book> getBookByName() {
-        return bookService.findByName("Melovoy chelovek");
-    }
-
 
     @GetMapping("book/findbycharacter")
     public List<BookResponse> getBookByCharacter(@RequestParam("character") String character) {
