@@ -17,16 +17,7 @@ public enum Type {
     }
 
     public static Type StringToEnum(String type) {
-        switch (type) {
-            case "BOOK":
-                return BOOK;
-            case "CDROM":
-                return CDROM;
-            case "MAGAZINE":
-                return MAGAZINE;
-            default:
-                return PCHDD;
-        }
+        return Type.valueOf(type);
     }
 
     public static String enumToString(Type type) {

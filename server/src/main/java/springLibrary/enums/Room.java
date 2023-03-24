@@ -20,16 +20,7 @@ public enum Room {
     }
 
     public static Room stringToEnum(String room) {
-        switch (room) {
-            case "FIRSTROOM":
-                return FIRSTROOM;
-            case "SECONDROOM":
-                return SECONDROOM;
-            case "THIRDROOM":
-                return THIRDROOM;
-            default:
-                return KITCHEN;
-        }
+        return Room.valueOf(room);
     }
 
     public static String enumToString(Room room) {

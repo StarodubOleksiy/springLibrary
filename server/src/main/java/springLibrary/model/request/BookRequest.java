@@ -128,8 +128,7 @@ public class BookRequest {
 
     public Type getType() {
         return Type.StringToEnum(this.type);
-
-    }
+            }
 
     public Book toBook() {
         Book book = new Book();
